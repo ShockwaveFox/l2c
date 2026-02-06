@@ -1,0 +1,113 @@
+What is Git?
+https://learn.microsoft.com/en-us/training/modules/intro-to-git/0-introduction
+https://github.com/firstcontributions/first-contributions
+https://www.youtube.com/watch?v=8JJ101D3knE&t=35s
+	• Git is a version control system
+	• A version control system tracks all changes made to a project over time in a repository
+	• It allows viewing a projects history to see who made what changes and when they were made
+	• You can easily revert back to an earlier version of the project
+	• Git is a distributed system - everyone can download a copy of the project to work on meaning there is no single point of failure
+	• This allows Multiple people can work on the same project at the same time using Git
+	• Git can be used through the command line, a GUI tool or in text editors
+	• A git commit is like taking a snapshot of the current project and adding it to the repo
+	• Modified files are added to the staging area for review before being committed / creating a snapshot
+	• Each commit should have a message explaining what was changed so it is easy to see the project state and history
+	• Every commit has a unique ID identifier
+	• Branches can be created separately from the main development project for fixes to be worked on independently and then added / merged back into the main project
+	• Common git phrases -
+		○ Working tree/main - all the main files for the project - where you make changes
+		○ Staging area - waiting area for changes before they are committed
+		○ Repository/repo - database that holds the permanent records of a projects history
+		○ Hash - unique identifier number for a version of a file - if the file contents are changed the hash changes
+		○ Four types of Object - 
+			§ Blob - a normal file
+			§ Tree - a directory 
+			§ Commit - a specific working tree version
+			§ Tag - the name given to a commit
+		○ Branch - separate from the main working tree - used to work independently on fixes before merging back into the main
+		○ Remote - a reference to a different git directory
+		○ Commands - used to perform operations in the terminal
+			§ Git push
+			§ Git pull
+		○ GitHub - a cloud platform that integrates with Git to store and hold files and repos
+ 
+Basic Git Commands
+	• Git init - creates a new repository to version changes
+	• Git add - adds files the staging area before "committing" them
+		○ Can add one file at a time or multiple separated by space
+		○ Can add all files of a type - git add *.txt
+		○ Can add a whole directory - git add .
+		○ Can add specific directories git add l2c/
+	• Git commit - saves the changes from the staging area into the project history
+		○ Git commit -m - adds a message describing the changes
+	• git clone {repo URL} - clones a repository from GitHub
+	• Git status - shows the status of the staging and working area
+	• Git checkout - change from current working directory to a different version from the repo
+	• Git log - shows information about recent commits
+	• Git --help - displays help and information about git commands
+		○ Git <command name> -h - shows help for specific command
+	• Git --version - shows current version of git installed
+	• Git --config user.name - sets user name to be shown against changes
+	• Git --config user.email - sets user email to be shown against changes
+		○ Git config settings -
+		○ System - all users on the system
+		○ Global - all repos for the current user
+		○ Local - the current repo only
+	• git config --global core.editor "code --wait" - configures git to use your default text editor set in path
+		○  "code --wait" - tells git to wait until the code editor is closed before continuing
+	• git rm file2.txt - removes the file from the working directory and the staging area
+	•  git mv main.js file1.js - renames file - main.js > renamed to > file1.js 
+	• .gitignore - creates a file that tracks files or folders for git to ignore - only works for files NOT already added to repo
+		○ echo logs/ >> .gitignore - creates a file called ".gitignore" and adds the logs directory to the file
+		○ >> means to append / add new line to the file
+	• Git ls-files - shows all files in the staging area
+	• git status -s  - shows a shorter status of files
+		○ MM file1.js - the left green M shows all changes made are in the staging area - the right red M shows changes made to the file in the working directory but not added to the staging area
+		○ A  file2.js - the green A shows that file2 has been added to the staging area
+	• Git restore --staged - moves files out of the staged area back into the working directory
+		○ git restore --source=6959644 file1.js - restores files from previous commit
+	• Git restore - removes all files from the working directory
+		○ Will only remove tracked files
+	• Git clean - removes all untracked files
+	• git diff - see changes made that are not in the staged area
+	• git diff --staged - shows the changes made to files in the staging area before committing them
+		○ diff --git a/file1.js b/file1.js - compares the copy of "a/file1" to the copy of "b/file1"
+		○ index 2dfe4b7..2be66bb 100644
+		○ --- a/file1.js - changes in the old file are shown with a minus "-" sign
+		○ +++ b/file1.js - changes in the new copy are shown with a plus "+" sign
+		○ @@ -1,3 +1,4 @@ - shows the chunk of a file that has been changed
+			§ -1,3 - shows that the old file from line 1 has 3 lines in it as shown below
+			§  hello
+			§  bum
+			§  poopy\
+			§  +1,4 - shows that the new file from line 1 has 4 lines in it as shown below
+			§ +floppy - this is the newly added line in the new file
+		○ diff --git a/file2.js b/file2.js - compares old vs new versions of file2
+		○ index ce01362..8bb7fb5 100644
+		○ --- a/file2.js
+		○ +++ b/file2.js
+		○ @@ -1 +1,2 @@
+		○  hello - current existing line in old file
+		○ +floppy - new line added in amended file
+	• git config --global diff.tool vscode - sets vscode to open files to compare changes made
+		○ git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+	• Git log - shows all commit history with latest at the top
+		○ Each commit has a unique number identifier
+		○ (HEAD -> master) - HEAD references the current branch being worked on, master is the main line being worked on
+		○ Name and email of person who made the commit is shown
+		○ Date and time each commit was made is shown
+	• Git log --oneline - a short version of commit history
+		○ Git log --oneline --reverse - shows all commit history with oldest at the top
+	
+		
+		
+		I understand what version control is
+		I understand what markdown is
+		I know what a git repository is
+		I know how to clone a repository
+		Git is installed on my computer
+		VS Code is installed on my computer
+		I created the l2c folder using mkdir
+		The lab repo is cloned locally
+		My README repo is cloned locally
+		I starred the Learn to Cloud repository
