@@ -2,11 +2,11 @@ What is Git?
 https://learn.microsoft.com/en-us/training/modules/intro-to-git/0-introduction
 https://github.com/firstcontributions/first-contributions
 https://www.youtube.com/watch?v=8JJ101D3knE&t=35s
-	• Git is a version control system
-	• A version control system tracks all changes made to a project over time in a repository
-	• It allows viewing a projects history to see who made what changes and when they were made
-	• You can easily revert back to an earlier version of the project
-	• Git is a distributed system - everyone can download a copy of the project to work on meaning there is no single point of failure
+- Git is a version control system
+- A version control system tracks all changes made to a project over time in a repository
+- It allows viewing a projects history to see who made what changes and when they were made
+- You can easily revert back to an earlier version of the project
+- Git is a distributed system - everyone can download a copy of the project to work on meaning there is no single point of failure
 	• This allows Multiple people can work on the same project at the same time using Git
 	• Git can be used through the command line, a GUI tool or in text editors
 	• A git commit is like taking a snapshot of the current project and adding it to the repo
