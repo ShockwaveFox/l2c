@@ -1,4 +1,5 @@
-What is Git?
+### What is Git?
+
 https://learn.microsoft.com/en-us/training/modules/intro-to-git/0-introduction
 https://github.com/firstcontributions/first-contributions
 https://www.youtube.com/watch?v=8JJ101D3knE&t=35s
@@ -71,24 +72,24 @@ Basic Git Commands
 - Git clean - removes all untracked files
 - git diff - see changes made that are not in the staged area
 - git diff --staged - shows the changes made to files in the staging area before committing them
-	- diff --git a/file1.js b/file1.js - compares the copy of "a/file1" to the copy of "b/file1"
+	- diff --git a/file1.js b/file1.js - **compares the copy of "a/file1" to the copy of "b/file1"**
 	- index 2dfe4b7..2be66bb 100644
-	- --- a/file1.js - changes in the old file are shown with a minus "-" sign
-	- +++ b/file1.js - changes in the new copy are shown with a plus "+" sign
-	- @@ -1,3 +1,4 @@ - shows the chunk of a file that has been changed
-			- -1,3 - shows that the old file from line 1 has 3 lines in it as shown below
+	- --- a/file1.js - **changes in the old file are shown with a minus "-" sign**
+	- +++ b/file1.js - **changes in the new copy are shown with a plus "+" sign**
+	- @@ -1,3 +1,4 @@ - **shows the chunk of a file that has been changed**
+			- -1,3 - **shows that the old file from line 1 has 3 lines in it as shown below**
 			- hello
 			- bum
 			- poopy\
-			- +1,4 - shows that the new file from line 1 has 4 lines in it as shown below
-			- +floppy - this is the newly added line in the new file
-		- diff --git a/file2.js b/file2.js - compares old vs new versions of file2
+			- +1,4 - **shows that the new file from line 1 has 4 lines in it as shown below**
+			- +floppy - **this is the newly added line in the new file**
+		- diff --git a/file2.js b/file2.js - **compares old vs new versions of file2**
 		- index ce01362..8bb7fb5 100644
 		- --- a/file2.js
 		- +++ b/file2.js
 		- @@ -1 +1,2 @@
-		-  hello - current existing line in old file
-		- +floppy - new line added in amended file
+		-  hello - **current existing line in old file**
+		- +floppy - **new line added in amended file**
 - git config --global diff.tool vscode - sets vscode to open files to compare changes made
 	- git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 - Git log - shows all commit history with latest at the top
@@ -101,13 +102,13 @@ Basic Git Commands
 	
 		
 		
-	[ ]	I understand what version control is
-	[ ]	I understand what markdown is
-	[ ]	I know what a git repository is
-	[ ]	I know how to clone a repository
-	[ ]	Git is installed on my computer
-	[ ]	VS Code is installed on my computer
-	[ ]	I created the l2c folder using mkdir
-	[ ]	The lab repo is cloned locally
-	[ ]	My README repo is cloned locally
-	[ ]	I starred the Learn to Cloud repository
+-	[ ]	I understand what version control is
+-	[ ]	I understand what markdown is
+-	[ ]	I know what a git repository is
+-	[ ]	I know how to clone a repository
+-	[ ]	Git is installed on my computer
+-	[ ]	VS Code is installed on my computer
+-	[ ]	I created the l2c folder using mkdir
+-	[ ]	The lab repo is cloned locally
+-	[ ]	My README repo is cloned locally
+-	[ ]	I starred the Learn to Cloud repository
