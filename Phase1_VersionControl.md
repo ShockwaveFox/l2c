@@ -1,4 +1,4 @@
-### What is Git?
+#### What is Git?
 
 https://learn.microsoft.com/en-us/training/modules/intro-to-git/0-introduction
 https://github.com/firstcontributions/first-contributions
@@ -102,13 +102,17 @@ Basic Git Commands
 	
 		
 		
--	[ ]	I understand what version control is
--	[ ]	I understand what markdown is
--	[ ]	I know what a git repository is
--	[ ]	I know how to clone a repository
--	[ ]	Git is installed on my computer
--	[ ]	VS Code is installed on my computer
--	[ ]	I created the l2c folder using mkdir
--	[ ]	The lab repo is cloned locally
--	[ ]	My README repo is cloned locally
--	[ ]	I starred the Learn to Cloud repository
+-	[x]	I understand what version control is
+-	[x]	I understand what markdown is
+-	[x]	I know what a git repository is
+-	[x]	I know how to clone a repository
+-	[x]	Git is installed on my computer
+-	[x]	VS Code is installed on my computer
+-	[x]	I created the l2c folder using mkdir
+-	[x]	The lab repo is cloned locally
+-	[x]	My README repo is cloned locally
+-	[x]	I starred the Learn to Cloud repository
+
+### AI revision prompt - 
+
+I'm studying cloud engineering and recently learned about version control. I will provide you an explanation about it and please ask me any questions if my explanation is not clear. I want to make sure I really understand this concept so please do not correct me, simple ask questions until I get the explanation right. Here is my explanation: version control is 
