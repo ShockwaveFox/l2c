@@ -1,0 +1,27 @@
+What is Programming?
+Introduction to Computer Programming | What is it? Programming Language Types
+- Computers need instructions given to them to do things
+- These instructions are called "programs" and are written by "programmers"
+- There are programs to manage computer hardware - these are system programs
+- Other programs provide user functionality - such as music or video player, word, excel or notepad programs
+- Computers only understand binary language - 0 & 1
+- Binary uses electrical signals to communicate - 0 there is no current or communication, 1 there is a current and communication
+- Machine Level Language is called a low level language - written in Binary
+- Very hard to write machine level language
+- Assembly Level language is a low level language
+- It was created to help write code easier - written using numbers or symbols
+- Assembly language used an "Assembler" to translate into Binary
+- High level languages were created to make coding easier and closer to human language
+- Compilation and Interpretation are used to translate high level languages into computer binary language
+- Low level languages allow programmers to directly access the computer memory and work with data
+- High level languages cannot directly access the computer memory and work with data
+- There are Middle level languages can access the memory and data directly with all the features of High level languages
+- High Level Languages - Python, Java
+- Middle Level Languages - C, C++
+- Machine Language is the fastest, then Assembly then High Level Languages
+- Compilation uses a compiler to convert a program written in high level language and translate it into machine language
+- Interpretation uses an interpreter to read each line of a program, translate and then execute that line
+- Compilation compiles and translates a whole program in one go and runs the whole program
+- Interpretation interprets and runs each line one at a time of a program
+- Complied languages include C & C++
+- Interpreted languages include Python
