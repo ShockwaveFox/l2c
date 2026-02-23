@@ -16,7 +16,8 @@ https://learn.microsoft.com/en-us/training/modules/communicate-using-markdown/
 	- \_This will show all \*\*special\*\* characters\_\_
 	- Headings can be added by using has (#) symbols
 		- Headings can be from 1 to 6 using one hash for each heading
-		- # will be a H1 ###### will be a H6 heading
+		- # will be a H1 
+		- ###### will be a H6 heading
 - Images can be added with ![Link an Image.] (image_path.png)
 - Links can be added with [Link to "link name"](/"link URL")
 - There can be two types of lists - ordered and unordered
@@ -42,17 +43,17 @@ https://learn.microsoft.com/en-us/training/modules/communicate-using-markdown/
 -  Code blocks can be added by using the backtick (`) character
 	- This will be `code`.
 - To create a multi line code block use three backticks at the beginning and end
-	- 	```markdown
-	- 	Var first = 1;
-	- 	Var second = 2;
-	- 	Var sum = first + second;
-	- 	```
--  GFM can add syntax highlights for coding languages by stating the language name after the first backticks
-	- ```javascript
+	```markdown
 	- Var first = 1;
 	- Var second = 2;
 	- Var sum = first + second;
-	- ```
+	```
+-  GFM can add syntax highlights for coding languages by stating the language name after the first backticks
+	```javascript
+	- Var first = 1;
+	- Var second = 2;
+	- Var sum = first + second;
+	```
 - GFM can use shortened formats for linking pull and issue requests - this is done using the format #ID = #1234
 - GitHub will shorten long links automatically that are pasted in
 - A commit can be linked to by pasting in its ID
