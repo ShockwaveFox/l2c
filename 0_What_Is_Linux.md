@@ -1,4 +1,4 @@
-What is Linux?
+#### What is Linux?
 What is Linux? - Linux Explained
  - Linux is a Kernal that interacts with hardware, software and applications
  - The Kernal is the core of Linux

@@ -1,4 +1,4 @@
-What is Networking?
+#### What is Networking?
 Computer Networks: Crash Course Computer Science #28
 - Latency - the time taken for data/packet/message to transfer
 - Local Area Network (LAN) - a group of connected devices

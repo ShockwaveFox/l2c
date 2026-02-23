@@ -32,7 +32,7 @@ https://www.youtube.com/watch?v=8JJ101D3knE&t=35s
 		- Git pull
 - GitHub - a cloud platform that integrates with Git to store and hold files and repos
  
-Basic Git Commands
+#### Basic Git Commands
 - Git init - creates a new repository to version changes
 - Git add - adds files the staging area before "committing" them
 	- Can add one file at a time or multiple separated by space
