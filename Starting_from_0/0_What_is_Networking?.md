@@ -30,7 +30,7 @@
 #### DNS - Domain Name System
 - DNS translates human readable website addresses "www.gaming.co.uk" into machine readable IP addresses - 124.234.768.987
 - There are four different servers involved in a DNS lookup process -
-    - __DNS__ recursor - receives the first request from a users machine or browser and begins the request chain to get the IP address
+    - __DNS recursor__ - receives the first request from a users machine or browser and begins the request chain to get the IP address
     - __Root nameserver__ - is the starting point to reference other servers for specific IP addresses
     - __TLD Namesever__ - A top level domain server that hosts the end port of the web address - .co.uk, .com, .org etc
     - __Authoritative nameserver__ - the final point where the actual IP address is held and can be sent back to the users machine
