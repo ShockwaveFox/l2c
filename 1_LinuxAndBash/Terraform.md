@@ -1,1 +1,17 @@
 #### What is Terraform
+- Terraform is a tool that allows infrastructure to be defined as code
+- It uses config files that are human readable and can be reused, shared and added to version control
+- It manages hardware - vms, databases, networking - and other things like DNS entries
+ - Terraform uses application programming interfaces (APIs) to work with services like cloud providers
+ - A workflow for Terraform has 3 stages -
+    - Write - resources are defined in the configuration file
+    - Plan - Terraform creates a plan for what it is going to build or destroy for approval before starting
+    - Apply - Terraform will execute the approved plan
+- There is a Terraform registry which trcks all providers that use Terraform
+- It tracks all current and existing infrastructure in a state file 
+- It uses this file to check what will be change in the plan
+- Config files are declarative - they are written to say how the infrastructure should look in its end, deployed state
+- It is not needed to write step by step instructions because of this
+- Modules can be written which are collections of regularly used infrastructure to save time
+- These modules can be modified
+- Config files and modules can be added to version control for tracking and sharing
