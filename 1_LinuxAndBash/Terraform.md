@@ -15,3 +15,21 @@
 - Modules can be written which are collections of regularly used infrastructure to save time
 - These modules can be modified
 - Config files and modules can be added to version control for tracking and sharing
+
+#### Terraform init
+- Will initialise a working directory that contains configuration files for Terraform
+- Should be the first command run after writing a new config file
+- Or after cloning exisiting configs from a version control system
+- The command is safe to be run multiple times - it wont delete or cause any other issues
+
+#### Terraform Plan
+- Creates the execution plan for deploying or destroying infrastructure
+- Can be reviewed to make sure the changes are correct or need amending
+
+#### Terraform Show
+- Provides a human readable format for the current state of infrastructure or changes plan file
+- Adding -json prints it in a machine readable format
+
+#### Terraform apply
+- Executes the Terraform plan actions that have been reviewed and approved
+- Uses the approved plan with the saved config file

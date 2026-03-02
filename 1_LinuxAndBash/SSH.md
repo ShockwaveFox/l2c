@@ -1,0 +1,14 @@
+#### What is SSH?
+- SSH stands for Secure Shell Protocol
+- Its a way to have a secure connection to devices over a network
+- Is usually used to connect to remote devices over the internet
+- Can be used to manage infrastructure, file transfers or remote server control
+- Connections are encrypted over the network for security
+- SSH runs on the TCP/IP protocol
+- Encryption and authentication are built in using public and private key pairs
+- Asymmetric encryption allows for symmetric encryption to occur over the connection
+- Username and password should still be required to login to remote devices
+- Port-forwarding or tunnelling can be used over SSH
+- Port 22 is used for SSH connections
+- This port is usually left open by firewalls
+- Managing SSH keys is a big task as so many can be used across multiple applications
