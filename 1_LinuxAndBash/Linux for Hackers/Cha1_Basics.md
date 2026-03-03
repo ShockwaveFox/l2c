@@ -1,0 +1,31 @@
+#### Starting with the Basics
+- Binaries - are files that can be executed
+    - usually located in /usr/bin directories
+- Case sensitivty - Linux is case sensitive - E.G. /Desktop and /desktop are 2 different things
+- Directory - a folder that contains files (dir for short)
+- Home - every user will have their own /home dir that their files will be saved in
+- Distro - there are lots of different distros or versions of Linux - Ubuntu, Fedora, CachyOS etc
+- root - this is the master account that has access to everything and everywhere on the system
+- Script - a file that contains lines of code to be run - can be used in bash, python or other languages to do things on the system
+- Shell - an interactive interpreter screen to input commands, most common is bash
+- Terminal - a command line interface
+- File system - Linux uses a logical file system - a tree based system
+    - / or root folder - the top of the file system and home dir of the root user
+    - /etc - contains config files for how and when apps can start up
+    - /home - a users home dir
+    - /mnt - for other drives mounted or attached to the system
+    - /media - for CD or USB devices that are mounted to the system
+    - /bin - where application binaries (like exe files) are stored
+    - /lib - where libraries are kept - shared programs
+
+#### Basic Commands
+- pwd - present working directory - shows where you currently are in the system directories
+- whoami - shows who you are logged in as - root user or normal user
+- cd - change directory - moves you to different locations in the system - E.G. cd /Downloads
+    - cd .. - moves you one step back from where you are
+    - can add more double dots to move up more dirs - cd .. .. = 2 steps back / cd .. .. .. = 3 steps back etc
+    - cd / - moves you back up into the root dir
+- ls - list - displays files and dirs in the current directory
+    - can be used to show other dir contents not just the current location - E.G ls /Downloads if in /Documents folder
+    - ls -l - long listing - shows more details such as if contents are files or dirs, size, owners and last modified time
+    - ls -a / ls -la shows hidden files 
