@@ -23,9 +23,28 @@
 - whoami - shows who you are logged in as - root user or normal user
 - cd - change directory - moves you to different locations in the system - E.G. cd /Downloads
     - cd .. - moves you one step back from where you are
-    - can add more double dots to move up more dirs - cd .. .. = 2 steps back / cd .. .. .. = 3 steps back etc
+    - can add more double dots to move up more dirs - 
+        - cd .. .. = 2 steps back 
+        - cd .. .. .. = 3 steps back etc
     - cd / - moves you back up into the root dir
 - ls - list - displays files and dirs in the current directory
-    - can be used to show other dir contents not just the current location - E.G ls /Downloads if in /Documents folder
+    - can be used to show other dir contents not just the current location - 
+        - E.G ls /Downloads if in /Documents folder
     - ls -l - long listing - shows more details such as if contents are files or dirs, size, owners and last modified time
-    - ls -a / ls -la shows hidden files 
+        - ls -a / ls -la shows hidden files
+- --help /-h - can be used with all commands to get more info and guidance on a command
+       - E.G. - ls --help / ls -h
+- man - shows a detailed manual page decsription of the command with more details then help 
+       - E.G. - man ls
+       - can scroll through the manual with "enter" or "page up / down" keys
+- locate - will search through the entire filesystem to find all occurences of the word searched for
+    - E.G. - locate <doc name>
+    - uses a database that may not have been created yet
+    - Database is only updated once a day as well so may miss recently created files
+- whereis - searches for binary files on the system
+    - E.G. - whereis bash
+- which - searches for binaries in the PATH variable
+    - E.G. - which bash
+- find - can search across any dirs for different types of files / dirs and specific names
+    - syntax is - find _directory_ _options_ _expression_
+    - E.G. - find / (1) -type f (2) -name change (3)
