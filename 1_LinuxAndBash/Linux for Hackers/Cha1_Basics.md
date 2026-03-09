@@ -60,3 +60,55 @@
             - E.G. - [b,c]at would find bat and cat - would not find hat or what
         - \* - will match any character after it no matter the length
             - E.G. - *at would find cat, bat, hat and what
+- grep - can search through a commands output for specific key words
+    - output of a command needs to be piped into grep - pipe symbol |
+    - E.G. ps aux | grep Fireforx (shows all running processes on a system and grep filters the output to show only Firefox processes)
+
+#### Creating files
+    - cat - cat uses the redirect (>) followed by a name for the file to create it
+        - E.G. cat > New file
+    - It will then go into interactive mode waiting for text to be entered
+    - Enter your text, press enter and then control + D to return to the terminal
+    - cat can also show the contents of the file - E.G. cat __file-name__
+    - to add extra lines to the file use 2 redirect symbols - 
+        - E.G. cat >> __extra lines to be added into file__
+    - To overwrite the original text in the file just use a single redirect symbol again
+        - E.G. cat > __Overwrite orignal file__
+    - touch - creates a new file with no redirect symbols needed
+        - E.G. - touch newfile
+
+#### Creating a directory
+ - mkdir - makes a new directory
+    - E.G. mkdir __new directory__
+    - use cd to move into the new directory - cd __new directory__
+
+#### Copying files
+- cp - this copies the file to a new location and leaves the original in the same place
+    - cp can also rename the copied file by adding a new name to it on the end of the new location directory path
+    - E.G. - create a new file - touch oldfile
+        - copy the new file to new location - cp oldfile /Users/Adam/Documents
+        - to rename and copy the file - cp oldfile /Users/Adam/Documents/newfile
+
+#### Renaming files
+- mv - can be used to move files to new directorys but ca also rename files in the same location
+    - E.G. - mv newfile newfile2
+    - The old newfile will not exist anymore
+
+#### Removing a file
+- rm - deletes a file
+    - E.G. - rm newfile2
+
+#### Removing a directory
+- rmdir - deletes a directory
+    - E.G. - rmdir old-directory
+    - rmdir will only remove empty directories - it will give an error if the directory has files inside it
+    - to remove a directory with files inside it the -r flag needs to be used
+    - E.G. - rmdir -r old-directory
+    - This will delete the directory and ALL files inside it
+
+#### Exercises
+1. [] Use ls in the root directory to see the layout of the Linux directory structure
+2. [] Use whoami to verify which user you are logged in as
+3. [] Use locate to find wordlists that can be used for password cracking
+4. [] Use cat to create a new file with text and then append extra text to that file.
+5. [] Create a new directory called hackerdirectory and create a new file called hackedfile. Copy that file to the root directory and rename it secretfile.
