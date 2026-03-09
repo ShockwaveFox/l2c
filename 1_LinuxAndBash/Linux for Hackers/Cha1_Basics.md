@@ -65,8 +65,8 @@
     - E.G. ps aux | grep Fireforx (shows all running processes on a system and grep filters the output to show only Firefox processes)
 
 #### Creating files
-    - cat - cat uses the redirect (>) followed by a name for the file to create it
-        - E.G. cat > New file
+- cat - cat uses the redirect (>) followed by a name for the file to create it
+       - E.G. cat > New file
     - It will then go into interactive mode waiting for text to be entered
     - Enter your text, press enter and then control + D to return to the terminal
     - cat can also show the contents of the file - E.G. cat __file-name__
