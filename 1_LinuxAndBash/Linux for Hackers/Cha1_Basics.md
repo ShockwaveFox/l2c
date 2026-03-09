@@ -48,3 +48,15 @@
 - find - can search across any dirs for different types of files / dirs and specific names
     - syntax is - find _directory_ _options_ _expression_
     - E.G. - find / (1) -type f (2) -name change (3)
+        - (1) - the directory in which to search - / is root
+        - (2) - what type of file to search for - f is a normal file
+        - (3) - the name of the file to search for - change
+    - NOTE - sometimes search terms need to be in quotation marks to find results -
+        - E.G. - find /Users/ada00211/Downloads -type f -name "Acronis*"
+    - Wildcards - there are 3 types of wildcards that can be added to searches -
+        - ? - represents one character of a word - E.G. - ?at would find bat, cat and hat
+            - "?at" would not find what as there are 2 letters (wh) before at
+        - [] - matches the characters that are put inside the brackets
+            - E.G. - [b,c]at would find bat and cat - would not find hat or what
+        - \* - will match any character after it no matter the length
+            - E.G. - *at would find cat, bat, hat and what
