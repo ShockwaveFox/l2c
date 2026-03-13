@@ -107,8 +107,10 @@
     - This will delete the directory and ALL files inside it
 
 #### Exercises
-1. [] Use ls in the root directory to see the layout of the Linux directory structure
-2. [] Use whoami to verify which user you are logged in as
+1. [x] Use ls in the root directory to see the layout of the Linux directory structure
+2. [x] Use whoami to verify which user you are logged in as
 3. [] Use locate to find wordlists that can be used for password cracking
-4. [] Use cat to create a new file with text and then append extra text to that file.
+    - database cannot be created on work laptop as I am not admin
+4. [x] Use cat to create a new file with text and then append extra text to that file.
 5. [] Create a new directory called hackerdirectory and create a new file called hackedfile. Copy that file to the root directory and rename it secretfile.
+    - Cannot copy to root dir on work laptop
