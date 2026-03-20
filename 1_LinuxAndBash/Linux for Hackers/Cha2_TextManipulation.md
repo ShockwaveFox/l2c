@@ -24,6 +24,8 @@
     - This command takes the cat command for the file and pipes it into grep which filters it and only displays results with Treasure in
    
 ### Practice
+- nl practice2.txt
+    - Displays and numbers all lines in the file
 - head -n+10 practice2.txt | tail -n3
     - this command starts at line 10 in the file (-n+10) and tail displays the last 3 lines (-n3) before and including line 10
         - 8	Gorilla
@@ -34,3 +36,6 @@
         - 10 Trout
         - 11 Goose
         - 12 Monkey
+
+#### Find and Replace
+- sed - searches for text and allows actions/substitutions to be done against it
