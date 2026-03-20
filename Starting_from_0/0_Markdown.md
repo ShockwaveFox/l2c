@@ -22,9 +22,9 @@ https://learn.microsoft.com/en-us/training/modules/communicate-using-markdown/
 - Links can be added with [Link to "link name"](/"link URL")
 - There can be two types of lists - ordered and unordered
 	- Ordered - 
-			1. First
-			2. Second
-			3.  Third
+		1. First
+		2. Second
+		3.  Third
 		- Unordered - 
 			- First 
 				- Nested
