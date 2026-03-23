@@ -39,3 +39,20 @@
 
 #### Find and Replace
 - sed - searches for text and allows actions/substitutions to be done against it
+    - E.G. - (1)sed (2)s/Gorilla/Ape/(1/g) (3)Users/adam/Documents/practice2.txt > (4)practice4.txt
+        - 1 - calls the sed command
+        - 2 - s searches for the word to replace (Gorilla) and then the word to replace it with (Ape)
+            - 1/g means replace only the first appearance of Gorilla or replace it globally in the file - only one of these should be used - E.G 1 OR g
+        - 3 - this the file to search and replace in practice2.txt
+        - 4 - the changes are saved into a new file practice4.txt
+
+#### More and Less
+- more - allows you to view a file one page at a time
+- can scroll through using the __enter__ key
+- press **q** to quit
+
+- less - allows you to view a file one page at a time
+- can scroll through using the __enter__ key
+- press **q** to quit
+- can search through the file using __/__ in bottom left of the screen
+- you an scroll through the results using __n__ (for next)

@@ -21,15 +21,22 @@ https://learn.microsoft.com/en-us/training/modules/communicate-using-markdown/
 - Images can be added with ![Link an Image.] (image_path.png)
 - Links can be added with [Link to "link name"](/"link URL")
 - There can be two types of lists - ordered and unordered
+
 - Ordered - 
 1. First
 2. Second
 3.  Third
-		- Unordered - 
-			- First 
-				- Nested
-			- Second
-			- Third
+	- Ordered - 
+1. First
+2. Second
+3.  Third
+
+- Unordered - 
+	- First 
+		- Nested
+	- Second
+	- Third
+
 - Tables can be input using pipes (|) for column separation and dashes (-) to define headers
 		First|Second
 		-|-
