@@ -56,3 +56,12 @@
 - press **q** to quit
 - can search through the file using __/__ in bottom left of the screen
 - you an scroll through the results using __n__ (for next)
+
+
+EXERCISES
+1. [] Use cat command to view the contents of a file
+2. [] Use the more command to display the contents of a file
+3. [] Use the less command to display the contents of a file
+4. [] Use the nl command to add line numbers to the filer
+5. [] Use the tail command to only display the last 12 lines of a file
+6. [] Use the cat command on a file and pipe it into grep to search for specific words
