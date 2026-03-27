@@ -22,6 +22,16 @@
 - dnf makecache - refreshes the list of software available in the repository
 - dnf update/upgrade - upgrdes all apps installed on the system from the repository
 
+#### Example Commands - OpenSUSE
+- zypper search <package name> - search repository for a package
+- zypper install <package name> - install a package
+- zypper remove <package name> - remove a package
+     - there will be a confirmation message when installing or removing a package - [Y/n]
+- zypper --remove clean-deps <package name> - removes the package and dependancies
+- zypper refresh - refreshes the list of software available in the repository
+- zypper update - upgrdes all apps installed on the system from the repository
+- zypper dup - full system update
+
 #### Example Commands - Arch
 - pacman -Ss <package name> - search repository for a package
     - S - sync/install
