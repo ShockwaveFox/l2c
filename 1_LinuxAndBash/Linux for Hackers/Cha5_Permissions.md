@@ -33,13 +33,23 @@ total 48
 -rw-r--r--  1 ada00211  staff  1207  8 Apr 15:25 Cha5_Permissions.md
 -rw-r--r--  1 ada00211  staff     0  3 Mar 14:26 readme.md
 ```
-    1   2            3         4        5       6           7
+    1    2            3         4        5       6           7
 -   \-   rw- r-- r--  1 ada00211  staff  1207  8 Apr 15:25 Cha5_Permissions.md
 
-- 1. file type - d is a directory, - is a file
-- 2. the permissions for owner, groups and other users
-- 3. number of links
-- 4. owner of the file
-- 5. size of the file in bytes
-- 6. date file was created/modified
-- 7. file name
+    1. file type - d is a directory, - is a file
+    2. the permissions for owner, groups and other users in that order - 3 sets of 3 permissions (rwx) - a dash (-) means no permissions given
+    3. number of links
+    4. owner of the file
+    5. size of the file in bytes
+    6. date file was created/modified
+    7. file name
+
+#### Changing permissions
+- chmod (chamge mode) - is used to change permissions
+- only the root user or file owner can change the permissions
+
+### Decimal notation
+- A number can be used to show one set of rwx permissions
+- This is presented in a binary format - 1 equals permission granted and 0 permission not granted
+- This means the 3 rwx permissions can be thought of as 3 binary on/off switches giving or not giving permissions - 000 or 111 and other combinations
+- These binary numbers can be represented as one single number between 0 and 7

@@ -34,10 +34,12 @@ https://learn.microsoft.com/en-us/training/modules/communicate-using-markdown/
 	- Third
 
 - Tables can be input using pipes (|) for column separation and dashes (-) to define headers
-		First|Second
-		-|-
-		1|2
-		3|4
+
+| First  |  Second |
+| :----- | :------ |
+| 1		 | 2		   |
+| 3		 | 4		   |
+
 -  Text can be quoted using the greater than (>) character
 	-  >This text will be quoted
 -  HTML can be used where it is not supported by Markdown
