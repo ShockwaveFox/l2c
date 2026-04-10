@@ -36,6 +36,13 @@ total 48
     1    2            3         4        5       6           7
 -   \-   rw- r-- r--  1 ada00211  staff  1207  8 Apr 15:25 Cha5_Permissions.md
 
+
+   | 1  |  2         |   3    |     4   |     5   |    6      |     7.  |
+   |-----|------------|--------|---------|---------|-----------|---------|-------|
+-  | \- |  rw- r-- r-- | 1 | ada00211  staff | 1207 | 8 Apr 15:25 | Cha5_Permissions.md |
+
+
+#### Put above lines into table
     1. file type - d is a directory, - is a file
     2. the permissions for owner, groups and other users in that order - 3 sets of 3 permissions (rwx) - a dash (-) means no permissions given
     3. number of links
