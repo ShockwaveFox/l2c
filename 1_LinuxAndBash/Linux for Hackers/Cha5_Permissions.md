@@ -55,3 +55,26 @@ total 48
 - This is presented in a binary format - 1 equals permission granted and 0 permission not granted
 - This means the 3 rwx permissions can be thought of as 3 binary on/off switches giving or not giving permissions - 000 or 111 and other combinations
 - These binary numbers can be represented as one single number between 0 and 7
+
+| Binary | Octal | rwx |
+|--------|-------|-----|
+|  000   |   0   | --- |
+|--------|-------|-----|
+|  001   |   1   | --x | 
+|--------|-------|-----|
+|  010   |   2   | -w- |
+|--------|-------|-----|
+|  011   |   3   | -wx |
+|--------|-------|-----|
+|  100   |   4   | r-- |
+|--------|-------|-----|
+|  101   |   5   | r-x |
+|--------|-------|-----|
+|  110   |   6   | rw- |
+|--------|-------|-----|
+|  111   |   7   | rwx |
+|--------|-------|-----|
+
+
+
+       
