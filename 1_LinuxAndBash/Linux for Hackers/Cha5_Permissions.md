@@ -50,7 +50,7 @@ total 48
 - chmod (chamge mode) - is used to change permissions
 - only the root user or file owner can change the permissions
 
-### Decimal notation
+### Decimal notation Permissions
 - A number can be used to show one set of rwx permissions
 - This is presented in a binary format - 1 equals permission granted and 0 permission not granted
 - This means the 3 rwx permissions can be thought of as 3 binary on/off switches giving or not giving permissions - 000 or 111 and other combinations
@@ -66,4 +66,22 @@ total 48
 |  101   |   5   | r-x |
 |  110   |   6   | rw- |
 |  111   |   7   | rwx |
-       
+
+- The binary column in the table above represents the lowest 3 numbers in binary - from right to left 1, 2, 4
+- So for all permissions to be enabled displays as -
+    - rwx = 111 = 4 + 2 + 1 = 7
+    - to represent the owner, group and other users having full permissions it would be - 777
+    - E.G. to apply permissions to a file using the octal numbers -
+        - chmod 774 adamsfile.txt - this gives rwx permissions to the owner and groups but other users read only for this file
+        - other combinations can be used - 664, 770 etc
+
+#### UGO Permissions
+- UGO stands for user (owner), group and others
+- There are 3 operators used -
+    - \+ adds permissions
+    - \- removes permissions
+    - = sets a permission
+- After the operator the permission to be added or removed is set - rwx -
+    - E.g. - chmod u+x adamsfile.txt - gives the user (owner) execute (x) permissions
+- Multiple permissions can be granted in one command - 
+    - E.g. - chmod u-x, g+r, o+r adamsfile.txt - removes execute from user and adds read permissions for group and others
