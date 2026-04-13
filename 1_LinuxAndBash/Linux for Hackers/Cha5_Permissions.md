@@ -85,3 +85,50 @@ total 48
     - E.g. - chmod u+x adamsfile.txt - gives the user (owner) execute (x) permissions
 - Multiple permissions can be granted in one command - 
     - E.g. - chmod u-x, g+r, o+r adamsfile.txt - removes execute from user and adds read permissions for group and others
+
+#### Root Execute Permission
+- Linux automatically gives all files rw permissions and all directories rwx permissions by default
+- Downloaded files cannot be executed straight away after downloading - this makes the system more secure
+- In these kinds of cases chmod will need to be used to give execute permissions against the file -
+    - E.g. chmod u+rwx newtool or chmod 766 newtool - gives user (owner) full permissions and groups and others read and write
+
+#### Permissions with Masks
+- Default permssions in Linux for files and directories are 666 (files) and 777 (directories)
+- A umask (unmask) allows removing permissions from the default settings
+- It is a 3 digit number that is subtracted from the default 3 digit permission number
+    - E.g. a umask of 022 will be subtracted from the default 666 - which will become 644
+
+| New Files  | New dirs |                     |
+|----------- |--------- |---------------------|
+|   666      |   777    | Default permissions |
+|  -022      |  -022    | umask               | 
+|   644      |   755    | New permissions     | 
+
+- A umask can be configured for each user on a system in the /home/username/.profile file - it is not a universal setting
+- To show the current umask setting type umask in a terminal
+
+#### Special Permissions
+- There are 3 special permissions that can be set in Linux
+- Set User ID (SUID), Set Group ID (SGID) and Sticky bit
+
+#### SUID
+- There are some files that need sudo/root permissions to execute even for users without root access
+- File owners permissions can be temporarily assigned to a normal user but only for that specific file
+- To set an SUID a 4 needs to be added before the normal permissions -
+    - E.g. chmod 4644 adamsfile.txt
+
+#### SGID
+- SGID grants temporary permissions but gives the permissions of the file owners group, not the file owner
+- If the file owner is part of a group that can execute the file then the SGID allows the same permission
+- An SGID applied to a directory gives ownership of files created in the directory to the directory owners group, not the file creators group
+    - this helps if multiple people share the directory as they will all be able to execute the files
+- To set an SGID a 2 needs to be added before the normal permissions -
+    - E.g. chmod 2644 adamsfile.txt
+
+#### Sticky bit
+- Is a permission bit that can be set against a directory
+- Allows a user to rename or delete the files in that directory
+- Sticky bit is from old Unix legacy systems and Linux usually ignores it
+
+#### Special Permissions and Privilege Escalation
+- 
