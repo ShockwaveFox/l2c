@@ -131,4 +131,11 @@ total 48
 - Sticky bit is from old Unix legacy systems and Linux usually ignores it
 
 #### Special Permissions and Privilege Escalation
-- 
+- A regular user can be granted root permissions through privilege escalation
+- Having root permissions gives access to do anything on the system
+- A script that needs to change passwords may have an SUID bit set
+- Files on the system with an SUI bit set can be search using find -
+    - E.g. - find / -user root -perm -4000 - this searches from the root directory (/) for all files owned by root (-user root) with an SUID bit set (-perm -4000)
+- A file that has an SUID bit set has an s in the permissions list instead of an x 
+    - E.g. - -r-s--x--x   1 root   wheel    1446512 19 Jul  2025 sudo
+- Anyone who can run the sudo file has root user privileges to passwords and other files
