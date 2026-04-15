@@ -65,3 +65,37 @@
     |   SIGQUIT    |   3           | Core dump terminates process but saves its info in memory to a file named core     | 
     |   SIGTERM    |   15          | Termination (TERM) default kill signal for the kill command               | 
     |   SIGKILL    |   9           | Complete kill signal - forces process to stop by sending tis resources to a special device named /dev/null     | 
+
+- kill -1 5566 - restarts a process
+- kill -9 5566 - fully stops and kills a process
+- killall -9 adams process - killall can take a process name to stop it
+
+#### Background Processes
+- Sometimes opening a process in the terminal keeps the terminal locked until that process is finished
+    - E.g. - vscode newscript - terminal opens vscode but cannot take any more commands until vdcode is closed
+- A process can be opening in the background to leave the terminal free by adding a &
+    - E.g. - vscode newscript & - terminal opens vscode but will still continue to be able to take new commands
+
+- A process can be moved to be in the foreground - this requires the process PID
+    - E.g. - fg 5566 - brings process to the foreground
+
+#### Schedule Processes
+- at - is a background process (daemon) that can schedule something to run sometime in the future
+- crond - can schedule jobs to run daily, weekly or monthly
+- at accepts many different time and date formats 
+
+| Format                 | Description                    |
+|------------------------|--------------------------------|
+|  at 7:20pm             | run at 7:20pm on current day   |
+|  at 7:20pm June 25     | Run 7:20pm on 25th June        | 
+|  at noon               | Run at noon on current day     |
+|  at noon June 25       | Run at noon on 25th June       |
+|  at tomorrow           | run tomorrow                   |
+|  at now + 20 minutes   | run 20mins from current time   |
+|  at now + 10 hours     | run 10 hours from current time |
+|  at now + 5 days       | run 5 days from current date   |
+|  at now + 3 weeks      | run 3 weeks from current date  |
+|  at 7:20pm 05/07/2026  | run at 7:20pm 5th July 2026    |
+
+- at 5:00pm
+    - at> /root/adamsscript - this will run adamsscript at 5pm today
