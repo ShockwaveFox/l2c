@@ -45,3 +45,47 @@
     - export HISTSIZE - exports the new HISTSIZE variable so it is effective across the whole system permanently
 
 #### Changing the Shell Prompt
+- The prompt in the shell shows the user you are logged in as, the machine hostname and the current directory you are in -
+    - E.g. - ada00211@adamslaptop Documents - 
+    - logged in as ada00211
+    - hostname - adamslaptop
+    - current directory - documents
+- The prompt will change if logged in as root -
+    - E.g. - root@adamslaptop Documents
+- The PS1 variable can be amneded to change the shell prompt
+    - The name, hostname and base name of current working directory can be changed
+    - \u or (%n) - changes username bash (zsh in brackets)
+    - \h or (%m) - changes hostname (zsh in brackets)
+    - \w or (%1~) - base name of current working directory (zsh in brackets)
+- It can be helpful to set up distinct shell promtps if you have multiple profiles or accounts on a machine
+
+- TO change the PS1 variable -
+    - E.g. - PS1="Adams super laptop: #"
+    -  Adams Super laptop: #
+- The terminal will only hold this change while this current session is over - to make it permanent it needs to be exported
+    - E.g. - export PS1
+
+#### Adding to PATH
+- If a newly installed tool or program is not added to the PATH variable, it will only be usable when you are actually in that tools specific directory
+- To make the tool usable from anywhere on the system it needs to be added to the PATH
+    - E.g. PATH=$PATH:/root/AdamsNewProgram
+    - This will assign all the current contents in PATH to a new PATH variable and adds the new program too
+    - The new tool will be added to the end of the PATH variable
+    - The shell will now look across the whole system for the new tool
+
+#### How to Not Add to PATH
+- Do not assign a new value to PATH directly
+    - E.g. - PATH=/root/AdamsNewTool
+- This command will write the new tool to PATH and will overwrite all the current variables in PATH
+- Only the new tool will exist in PATH and other critical commands will not be able to be used anymore
+- Good practice is to save a copy of the full PATH list before adding a new line to it
+
+#### User Defined Variables
+- A new variable can be assigned by adding a variable to it
+    - E.g. - NewVariable='This is a new variable'
+- To see the contents of this variable you can use echo
+    - E.g. - echo $NewVariable = This is a new variable
+- This is helpful for repeated long commands that are typed regularly or for bash scripting
+- To keep this variable permanently it needs to be exported
+- To delete the variable use the unset command -
+    - E.g. - unset $NewVariable
