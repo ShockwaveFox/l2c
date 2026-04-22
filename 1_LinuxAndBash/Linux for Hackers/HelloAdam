@@ -1,0 +1,7 @@
+#! /bin/bash
+
+# This is my first script
+
+echo "Hello Adam, congratulations on your first script."
+
+echo "I cant believe it worked!!"

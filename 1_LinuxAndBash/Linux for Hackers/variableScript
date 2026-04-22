@@ -1,0 +1,15 @@
+#! /bin/bash
+
+# This is my second bash script. In this one I /
+# 1) prompt the user for input and place the input in a variable /
+# 2) disply the variables input in a string.
+
+echo "What is your name?"
+
+read name
+
+echo "What chapter are you on in Linux Basics for Hackers?"
+
+read chapter
+
+echo "Welcome," $name "to chapter" $chapter "of Linux Basics for Hackers!"
