@@ -159,3 +159,33 @@ echo "Installation complete"
 
 ```sudo eopkg install "${packages[@]}"```
 - This will install all the packages if answer matched 'y'
+
+#### Built in bash commands
+| Command   | Function                                         |
+|-----------|--------------------------------------------------|
+|  :        | returns a 0 or true answer                       |
+|  .        | execute a shell script                           | 
+|  bg       | puts a job in the background                     |
+|  break    | exits the current loop                           |
+|  cd       | change directory                                 |
+|  continue | restarts the current loop                        |
+|  echo     | displays text on screen                          |
+|  eval     | evaluate the current expression                  |
+|  exit     | exits the shell                                  |
+|  export   | makes a variable change permanent                |
+|  fg       | puts job in the foregroun                        |
+|  getopts  | parses arguements to shell script                | 
+|  jobs     | lists background jobs                            |
+|  pwd      | prints current directory                         |
+|  read     | reads data from user input                       |
+|  readonly | makes a variable read only                       |
+|  set      | lists all variables                              |
+|  shift    | moves parameters to the left                     |
+|  test     | evaluates arguments                              |
+|  [        | perform conditional test                         |
+|  times    | prints system and user times                     |
+|  trap     | traps a signal                                   |
+|  type     | shows how arguments are interpreted as a command |
+|  umask    | change default permissions for new files         |
+|  unset    | deletes variable or function values              |
+|  wait     | waits for background process to finish           |
