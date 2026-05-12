@@ -2,22 +2,22 @@
 
 #### Azure CLI/PowerShell commands
 
-//LOGIN & SUBSCRIPTION
-//to login using service principal
+## LOGIN & SUBSCRIPTION
+- to login using service principal
 az login --service-principal -u {appid} -p {password} --tenant {tenant}
 
-az account list
+- az account list
 
-az account list --query "[?isDefault]"
+- az account list --query "[?isDefault]"
 
-//to get current logged in Azure account details
+# to get current logged in Azure account details
 az account show
 
 # to get a particular property from the AZ command output
-az account show --query id --output tsv
+- az account show --query id --output tsv
 
-//to get default setting
-az config get
+# to get default setting
+- az config get
 
 //to set default setting
 az config set defaults.location=eastus defaults.group=MyResourceGroup
