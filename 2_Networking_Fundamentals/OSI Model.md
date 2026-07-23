@@ -14,5 +14,15 @@
 - Session - sets up and manages connections for sending and receiving data
 - Transport - defines how the data will be sent
 - Network - assigns source and destination IP adress to the data
-- Data link - adds MAC address (physical device) addresesses to the data
-- Physical - transmits the data over physical wires
+- Data link - adds MAC addresses to the data
+- Physical - uses physical wires to send the data
+
+#### TCP/IP Model
+- Only 5 layers vs OSI models 7 layers
+- Application, Presentation and session layers are combined
+
+- Application - the software applications used by users
+- Transport - defines how the data will be sent
+- Network - assigns source and destination IP adress to the data
+- Data link - adds MAC addresses to the data
+- Physical - uses physical wires to send the data
