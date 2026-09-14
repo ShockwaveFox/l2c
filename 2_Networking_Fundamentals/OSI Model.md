@@ -4,7 +4,7 @@
     - clients make requests to a server for some type of data or files
     - server receives the request and responds back to the client with the data
 
-### OSI Model
+#### OSI Model
 - There are 7 layers in the OSI model
 - data will move up or down through all the layers
 
@@ -54,7 +54,7 @@
     - E.g. - process is take a picture, one thread can be open camera, another can be focus camera, another can be close shutter
     - Multi-threaded processes - multiple threads running jobs simulataneoulsy to speed up the process
 
-#### IP Addresses, Sockets & Ports - 1.51
+#### IP Addresses, Sockets & Ports
 - Socket - is an interface between the process and the internet
 - Ports - specify which application is being communicated with
     - some port numbers are set to specific applications and only used by those applications
@@ -98,4 +98,38 @@
 - Cookies can be used to track clients by websites and applications
 - 3rd party cookies - cookies set by other websites than the one you are visiting - adverts
 
-2:11
+#### Email
+- Application layer protocols for email -
+    - SMTP - Simple Mail transfer Protocol - for sending emails
+    - POP3 - for receiving emails
+- Transport layer protocols for email
+    - TCP - used for ensuring all the data is sent correctly
+
+#### SMTP - sending emails
+- Email is sent from the device to the senders SMTP server
+- The senders SMTP server will connect to the receivers SMTP server to transfer the email
+- Commands to find SMTP servers -
+    - nslookup -type=mx gmail.com
+    - nslookup - 
+    - type - specifies the type of server to lookup - mx = mail exchange (SMTP servers)
+    - gmail.com - the SMTP servers for gmail
+
+#### POP3 - receiving emails
+- Post Office Protocol 
+- Client will connect to the POP server (port 110)
+- Authentication and authorisation will happen between client and server
+- Emails will be downloaded from the server to the client
+
+#### IMAP
+- Internet Message Access Protocol
+- Allows access to emails on multiple devices
+- Emails can be sent and deleted from different devices and will update across all devices
+
+#### DNS
+- Domain Name System
+- Used to change human written website addresses to computer IP addresses
+
+#### Transport Layer
+- Transports data from the network layer to the correct application on a device
+- 
+

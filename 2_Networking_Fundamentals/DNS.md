@@ -31,3 +31,6 @@
 
 - Once the IP address has been sent back to the requesting machine it will store the IP in its cache memory
 - The local DNS server will aslo save the IP for any other future requests
+
+- dig - DNS lookup utility
+    - shows the DNS servers used to find a website IP address
