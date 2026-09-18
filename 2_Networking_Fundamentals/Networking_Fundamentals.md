@@ -130,6 +130,71 @@
 - Used to change human written website addresses to computer IP addresses
 
 #### Transport Layer
-- Transports data from the network layer to the correct application on a device
-- 
+- Transports (receives and sends) data to and from the network layer to the correct application on a device
+- Multi-plexing and de-multiplexing happens at Transport layer
+- Multi-plex - packs multiple individual messages being sent to different applications on one device into one big message
+- De-Multi-plex - unpacks the one big message into the individual messages to send to each application on one device
+- The data sent in segments will have socket port numbers specifying the application the data came from and the application the data is going to
 
+- Congestion - traffic on the network - happens at transport and network layers
+    - If a network has lower bandidth but data is still being sent quickly segments can be lost
+- Congestion control - tries to send segments at slower speeds
+    - Uses Congestion control algorithms built into TCP protocol
+
+- Checksum - a string value calculated when data is sent - is checked again when data reaches the receiver to ensure it has not been changed or corrupted during send
+    - Checksum value should match at sender and receivers end
+
+- Timers - a timer starts when each data packet is sent and ends when receiver sends a confirmation message that the data reached the destination
+    - If the timer expires and no confirmation message is received the data is treated as not sent successfully
+- Retransmission timer - if the timer expires or no confirmation message is received the data is resent
+
+- Sequence numbers - each packet is sent with a sequence number - the order that they were sent - 1,2,3 etc
+    - Helps keep the data segments in order and shows any duplicates that were sent in case of retransmission timers
+
+#### Transport Layer Protocols
+- UDP - User Datagram Protocol
+    - Is very fast
+    - Data sent over UDP can sometimes not be delivered
+    - Data can sometimes change during send
+    - Data may not be sent in order
+
+- Is a connectionless protocol - no connection is established between the devices
+- Uses Checksums so data can be checked for changes or corruption but UDP will not resend any data
+
+- UDP segments have a source and destination port number attached to them
+    - datagram length and checksum are added to the packet
+    - each packet contains an 8 bytes header
+    - the data section contains 65,536 bytes
+
+- DNS, online gaming and video conferencing use UDP
+
+- TCP - Transmission Control Protocol
+- Sorts the raw data from the application layer into segments/chunks
+    - it adds headers and checksums to each segment of data
+    - congestion control is also added
+    - maintains the data to keep it in order using sequence numbers
+    - can resend data with the retransmission timer
+
+- is a connection oriented protocol
+    - a connection has to be established between devices before data can be sent
+    - supports full duplex - messages can be sent to each connected device at the same time
+    - can only connect two computers to communicate at one time
+
+#### 3 Way Handshake
+- The process two devices go through to establish a TCP connection
+
+- Step 1 - client sends a synchronisation (SYN) flag to a server
+    - assigns a random sequence number
+- Step 2 - server will reply with a synchronisation (SYN) flag an acknowledge (ACK) flag
+    - assigns a random sequence number
+    - ACK number will be sent as well - this is sequence number plus 1
+- Step 3 - client will then send another ACK flag back to the server
+     - assigns a random sequence number
+    - ACK number will be sent as well - this is sequence number plus 1
+
+#### Network Layer
+- Receives segments from the Transport layer and wraps them in Packets
+- Sends data across networks using routers
+- Routers are connected to each other all over the world
+- Every router will have its own specific network address 
+    - 
