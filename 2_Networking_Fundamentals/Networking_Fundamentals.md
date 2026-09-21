@@ -196,5 +196,63 @@
 - Receives segments from the Transport layer and wraps them in Packets
 - Sends data across networks using routers
 - Routers are connected to each other all over the world
-- Every router will have its own specific network address 
-    - 
+- Every router will have its own specific network address and routing table
+    - A router checks the destination IP address in every packet against its routing table
+    - It will send onto the next router from its routing table until it reaches its destination
+
+#### Internet Protocol (IP)
+- IP Address version 4 - IPV4
+    - 32 bit, 4 octets
+
+- IP addresses are made up of a network part and a host part
+    - Network part shows the overall network the device is part of
+    - Host part specifies the specific device in the network
+
+- IP Addresses are sorted into Classes
+    - Class A - 0.0.0.0 - 127.255.255.255
+    - Class B - 128.0.0.0 - 191.255.255.255
+    - Class C - 192.0.0.0 - 233.255.255.255
+    - Class D - 224.0.0.0 - 239.255.255.255
+    - Class E - 240.0.0.0 - 255.255.255.255
+
+- Subnet masks determine the network part of an IP address and its class
+- the subnet defines the number of bits used for the network address - the remaining number of bits are allocated to devices
+    - E.G. - 192.234.0.0/24 - 24 bits are for the network address
+    - The remaining bits are available for devices
+
+- There are reserved IP addresses -
+    - 127.0.0.0/8
+        - Used for loopback or local host addresses
+        - Known as loopback so a machine can be used as a client and server to communicate with itself - for developers or testing
+
+- IP packets 
+    - header is 20 bytes
+        - contains IP version, flags, identification number, protocols, checksum
+        - Time To Live (TTL) - specifies the number of hops a packet can take before it is dropped
+            - stops packets getting stuck in continuous loops
+
+- IP Address version 6 - IPV6
+    - 128 bits
+- New technology that is not backwards compatible with older devices configured for IPV4
+- Uses 8 sections of 16 bit hexadecimal strings
+
+#### Firewall
+- 2 types of firewalls - one for global internet and one for internal network
+- allows network traffic in or out depending on certain rules and filters
+    - can block based on IP number, protocols, geo location, MAC address
+
+- There are stateless and stateful firewalls
+
+#### Network Address Translation
+- Changes an internal network private IP to a public internet IP
+
+#### Data Link Layer
+- Takes packets from the Network layer to send over the physical link
+- Wraps IP packets into frames to send over the network
+    - frames contain -
+        - data link layer address of source and destination
+        - Ip address of source and destination
+- Devices communicate using the data link layer address (DLLA) / Media Access Control (MAC) address
+    - addresses are kept in the Address Resolution Protocol (ARP) cache
+
+- Dynamic Host Configuration Protocol - automatically assigns devices IP addresses from a pool of available IPs
