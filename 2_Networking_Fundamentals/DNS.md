@@ -33,4 +33,38 @@
 - The local DNS server will aslo save the IP for any other future requests
 
 - dig - DNS lookup utility
-    - shows the DNS servers used to find a website IP address
+    - shows the DNS servers used to find a websites IP address
+
+- dig google.co.uk
+
+```
+; <<>> DiG 9.10.6 <<>> google.co.uk
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 30545
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 4, ADDITIONAL: 9
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 1232
+;; QUESTION SECTION:
+;google.co.uk.			IN	A
+
+;; ANSWER SECTION:
+google.co.uk.		300	IN	A	142.251.29.94
+
+;; AUTHORITY SECTION:
+google.co.uk.		79709	IN	NS	ns2.google.com.
+google.co.uk.		79709	IN	NS	ns3.google.com.
+google.co.uk.		79709	IN	NS	ns1.google.com.
+google.co.uk.		79709	IN	NS	ns4.google.com.
+
+;; ADDITIONAL SECTION:
+ns1.google.com.		33869	IN	A	216.239.32.10
+ns3.google.com.		33869	IN	A	216.239.36.10
+ns2.google.com.		33869	IN	A	216.239.34.10
+ns4.google.com.		33869	IN	A	216.239.38.10
+ns1.google.com.		33869	IN	AAAA	2001:4860:4802:32::a
+ns3.google.com.		33869	IN	AAAA	2001:4860:4802:36::a
+ns2.google.com.		33869	IN	AAAA	2001:4860:4802:34::a
+ns4.google.com.		33869	IN	AAAA	2001:4860:4802:38::a
+```
