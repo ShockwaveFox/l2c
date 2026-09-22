@@ -36,6 +36,13 @@
     - shows the DNS servers used to find a websites IP address
 
 - dig google.co.uk
+    - Shows a question section - what was asked (DNS servers that will have the IP for google.co.uk)
+        - IN - Internet Class
+        - A - A record (IPV4 address)
+    - Answer section - gives the IP address (142.251.29.94)
+        - 300 - Time to Live (TTL) how long the servers cache this answer for in seconds
+    - Authority section - shows the nameservers (NS) that are asked for and give the google.co.uk IP address
+    - Additional section - shows the name servers that hold the Ip addresses for IPV4 (A) and IPV6 (AAAA)
 
 ```
 ; <<>> DiG 9.10.6 <<>> google.co.uk
@@ -68,3 +75,13 @@ ns3.google.com.		33869	IN	AAAA	2001:4860:4802:36::a
 ns2.google.com.		33869	IN	AAAA	2001:4860:4802:34::a
 ns4.google.com.		33869	IN	AAAA	2001:4860:4802:38::a
 ```
+
+- dig +trace google.co.uk - traces the whole DNS request process across all servers to find the IP address for google.co.uk
+
+- nslookup - a simpler version of dig for looking up IP adresses
+    - without any flags defaults to showing A records only
+    - flags can be added to search for different types of servers
+        - nslookup reddit.com - shows the IPv4 address (A record) for reddit.com
+        - nslookup -type=AAAA reddit.com - shows the IPv6 address
+        - nslookup -type=NS reddit.com - shows the authoritative nameservers
+        - nslookup -type=MX reddit.com - shows the mail servers for reddit.com
