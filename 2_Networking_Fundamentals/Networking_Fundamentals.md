@@ -256,3 +256,43 @@
     - addresses are kept in the Address Resolution Protocol (ARP) cache
 
 - Dynamic Host Configuration Protocol - automatically assigns devices IP addresses from a pool of available IPs
+
+#### Ping and trace route
+- ping - sends small packets to a host to test connectivity
+- a good test for checking basic connectivity
+
+```
+ping google.co.uk
+PING google.co.uk (142.251.30.94): 56 data bytes
+64 bytes from 142.251.30.94: icmp_seq=0 ttl=112 time=36.818 ms
+64 bytes from 142.251.30.94: icmp_seq=1 ttl=112 time=20.992 ms
+64 bytes from 142.251.30.94: icmp_seq=2 ttl=112 time=19.803 ms
+64 bytes from 142.251.30.94: icmp_seq=3 ttl=112 time=18.872 ms
+64 bytes from 142.251.30.94: icmp_seq=4 ttl=112 time=18.125 ms
+64 bytes from 142.251.30.94: icmp_seq=5 ttl=112 time=24.748 ms
+^C
+--- google.co.uk ping statistics ---
+6 packets transmitted, 6 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 18.125/23.226/36.818/6.439 ms
+```
+- shows the website and IP the ping is sent to
+    - 64 bytes from 142.251.30.94: - shows the size of the packet received back from the site
+    - icmp_seq= - the sequence of the packets received
+    - time shows how long the host took to respond and send the packets back
+
+- traceroute (tracert) shows the list of routers or network hops that traffic takes before reaching the goal IP address / host
+
+```
+traceroute google.co.uk
+traceroute to google.co.uk (142.250.140.94), 64 hops max, 40 byte packets
+ 1  192.168.1.1 (192.168.1.1)  13.643 ms  6.701 ms  3.904 ms
+ 2  10.53.36.229 (10.53.36.229)  18.609 ms  13.760 ms  12.362 ms
+ 3  lutn-core-3a-ae42-650.network.virginmedia.net (80.255.194.212)  26.828 ms  18.804 ms  19.873 ms
+ 4  * * *
+ 5  eislou2-ic-4-ae0-0.network.virginmedia.net (80.255.204.55)  23.108 ms  14.192 ms  14.342 ms
+ 6  142.250.160.116 (142.250.160.116)  18.988 ms  29.907 ms
+    host-213-104-85.166.not-set-yet.virginmedia.net (213.104.85.166)  16.041 ms
+ 7  wj-in-f94.1e100.net (142.250.140.94)  23.408 ms  22.773 ms  22.004 ms
+ ```
+ - tracroute sends 3 packets to each hop and measures how long each packet takes to finish the roundtrip (latency)
+ - the * * * results are likely due to routers being configured to not respond or block ping to improve latency
