@@ -51,10 +51,10 @@
     - 3xx - Redirect - request has been redirected to a new/different location
          - 301 - moved to a new URL - old URL has been redirected to a new version
          - 304 Not modified (Cached version) - if revisiting a page and nothing has changed and doesnt need a refresh to update
-    - 4xx - Client error - The request is bad or deos not contain the needed information
-        - 400 - Bad Request - incorrect data sent to server and cannot be completed
-        - 401 - Unauthorised - user is not allowed to access this page
-        - 404 - Not found - a page that does not exist
+    - 4xx - Client error - The request is bad or does not contain the needed information
+        - 400 - Bad Request - incorrect/bad data was sent to server and request cannot be completed
+        - 401 - Unauthorised - the user is not allowed to access this page or service
+        - 404 - Not found - a page or service that does not exist
     - 5xx - Server error - the server could not successfully complete the request
         - 500 - Internal server error - something is not working on the server side
 
