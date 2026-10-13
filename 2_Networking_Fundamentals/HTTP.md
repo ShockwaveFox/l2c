@@ -65,5 +65,34 @@
     -  Can do full multi-plexing
     - Is faster, more efficient and secure
 
+#### HTTPS
+- Any data sent over the internet not using HTTPS is sent in plain text
+    - Anyone who is able to intercept the data being sent will be able to see what is sent
 
+- HTTPS encrpyts all data sent
+    - Anyone who intercepts it will not be able to read it
+    - Transport Layer Security (TLS) is used to send encrpyted data
+
+#### TLS Handshake
+- Step 1 - TCP Handshake 
+    - the client and server create a TCP connection
+- Step 2 - Certificate Check
+    - Client tells the server the options it is able to use
+        - What version of TLS it can use
+        - The supported cipher suites (encryption algorithms) available
+    - The server replies with the chosen TLS version and cipher suite to use
+        - The server sends its certificate with its public key to the client
+- Step 3 - Key Exchange 
+    - The client creates a session key and encrypts it using the servers public key
+    - The server will decrypt the session key using its private key
+- Step 4 - Data Transmission
+    - The client and server encryt data using the session key to send data securely over the internet
+
+#### Asymmetric Encryption
+- Data is encrypted using a client or servers Public key 
+- The data can only be decrypted using the corresponding Private key from the client or server
+- Asymmetric encryption is very heavy progammatically
+
+- Symmetric encryption is where the client and server both use the same key
+    - This is the encryption used after exchanging the session key between them
 
