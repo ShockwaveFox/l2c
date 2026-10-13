@@ -31,3 +31,5 @@
         - p - shows the process ID (PID)
         - n - shows the port numbers
 - sudo netstat -tulpn - runs under sudo (super-user) elevated level access
+
+#### Curl
