@@ -33,3 +33,10 @@
 - sudo netstat -tulpn - runs under sudo (super-user) elevated level access
 
 #### Curl
+- curl - sends a HTTP request to a URL
+- Flags can be added for extra information
+    - -d - send data/body
+    - -H - send a header
+    - -i - show response headers
+    - -v - show detailed request + response information
+    - -X - specifies the exact HTTP method (GET, POST, DELETE etc)
