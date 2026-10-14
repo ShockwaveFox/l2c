@@ -40,3 +40,23 @@
     - -i - show response headers
     - -v - show detailed request + response information
     - -X - specifies the exact HTTP method (GET, POST, DELETE etc)
+
+#### Dev Tools
+- Used to check if page resources are fully downloaded or uploaded successfully
+- Can inspect headers and other details on a webpage
+
+- The network tab shows all items loaded, status codes, type of resource and other details
+- To hide or show more columns right click the column headers
+- Network speed can be "throttled" with different options to give a view of the page load speed on a mobile device
+
+- Click an items name to see headers, a preview of the page, the response and the timing of the items loading
+
+- The filter box can be used to search for specific file type
+    - regexes are supported
+    - using a - before a file type removes it from the results
+    - searching for a specific domain can filter only on that domain 
+        - E.g. - domain:github.com
+
+- Elements can be blocked on a page using Request Blocking
+    - E.g. - blocking all css elements will remove them from the page and change its layout
+    - The page will need to be reloaded once a block has been added for it to be active

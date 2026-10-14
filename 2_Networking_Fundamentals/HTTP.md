@@ -95,4 +95,3 @@
 
 - Symmetric encryption is where the client and server both use the same key
     - This is the encryption used after exchanging the session key between them
-
