@@ -1,0 +1,15 @@
+# Too install AZ cli and terraform for the codespace
+
+{
+  "name": "Azure Networking Lab",
+
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+
+  "features": {
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/terraform:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": false
+    }
+  }
+}
