@@ -5,6 +5,11 @@
 #### Print
 - To print text - print ("Hello there")
     - All text needs to be enclosed in single ('Hi') or double quotes ("Hi")
+    - Single quotes can allow double quotes to be printed out
+```
+print ('print("Hello there!")')
+print("Hello there!")
+```
 
 - Multiple lines can be printed one after the other
 ```
@@ -29,3 +34,17 @@ print (100 - 75)
 print ('Hello, you 3 are scary!! Look at my special characters *&^%$')
 Hello, you 3 are scary!! Look at my special characters *&^%$
 ```
+
+#### Comments
+- in Python a comment can be added by using a # symbol
+- Anything after the # will be ignored by Pythong
+- Comments are helpful for explaining what the code is doing
+
+```
+print ('How many minutes in a day?')
+# Prints the string question
+print (60 * 24)
+# Calculates minutes times hours in a day
+```
+- Comments can be added anywhere, even at the end of a line
+
