@@ -39,6 +39,18 @@ print (100 - 75)
 print ('Hello, you 3 are scary!! Look at my special characters *&^%$')
 Hello, you 3 are scary!! Look at my special characters *&^%$
 ```
+- Each print funtion will usually print on its own line
+- Adding the end="" argument will make it so it stays on a single line
+```
+print(5, end="")
+print(" + ", end="")
+print(8, end="")
+print(" - ", end="")
+print(4, end="")
+print(" = ", end="")
+print(5 + 8 - 4, end="")
+5 + 8 - 4 = 9
+```
 
 #### Comments
 - in Python a comment can be added by using a # symbol
@@ -201,4 +213,16 @@ Hi Adam, you are 38 and you live in Toddington
 ```
 print("Hi", name, "you are", age, "and you live in", town,".")
 Hi Adam you are 38 and you live in Toddington .
+```
+
+#### Floating Point Numbers
+- floats are numbers with decimal points
+    - E.g. - 1.5, 7.9. 300.21
+- They are used the same way as integers
+```
+number1=2.5
+number2=1.25
+number3=3.62
+print(number1 + number2 + number3)
+7.37
 ```
