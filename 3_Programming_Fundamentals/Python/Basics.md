@@ -80,9 +80,31 @@ Hi Adam Taylor its really good to meet a real Adam Taylor
 - The original data is deleted once this is done and will not be available unless manually put back into the variable again
 
 ```
-name = 'Adam'
-name = 'Taylor'
+name = "Adam"
+>>> print(name)
+Adam
+name="Taylor"
+>>> print(name)
+Taylor
 ```
+
+- Variables that do not change are known as "hard-coded" variables
+- Variables can be amended - adding extra text or numbers to the original variable value
+    - This is done by using the normal naming process for a variable along with a + symbol and the extra data to be added to it
+```
+>>> word="Hello"
+>>> print(word)
+Hello
+>>> word = word + "!!!"
+>>> print(word)
+Hello!!!
+```
+- Variables should be named in relation to what they are going to be used for
+- They have to begin with a letter - lower or upper case
+- They can contain letters, numbers and under scores _
+- Lower and upper case letters are treated as different characters
+    - Variables called - name, Name and NAME are all different variables and can contain different bits of data each
+- Common rules are variables should only use lower case letters and separate multiple words with an under score
 
 #### Input
 - The input command takes data that the user inputs
@@ -112,3 +134,71 @@ print (address)
 print (city)
 ```
 - To add a space between the variables one has to be added in within quotes
+
+```
+name = input('Please type in a name' )
+year = input('Please type in a year')
+print (name + ' is a valiant knight, born in the year ' + year + '. One morning ' + name + ' woke up to an awful racket: a dragon was approaching the village. Only ' + name + ' could save the village\'s residents.')
+```
+
+#### Integers
+- Integers are whole numbers that do not have any decimal parts
+    - E.g - 1, 19, 300
+- Integers can be assigned to variables
+```
+age=21
+print(age)
+21
+```
+- Integers do not need quote marks around them to be assigned to a variable
+- Using quotes will turn them into a string type variable
+```
+number=100
+number1="100"
+print(number + number)
+200
+print(number1 + number1)
+100100
+```
+- A string type cannot calculate mathematical sums - an integer can
+- Integer and string values cannot be mixed together
+```
+answer=10*2
+print("The answer is " + answer)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+```
+- The str function can make an integer value into a string value
+```
+print("The answer is " + str(answer))
+The answer is 20
+```
+- Print can use built in functionality to combine different values
+    - This is done by using a commma between the 2 different types
+```
+print("The answer is", answer)
+The answer is 20
+```
+- A space is automatically added when using the comma
+
+#### f strings
+- f strings can format print output that contains multiple data types
+```
+print(f"The answer is {answer}")
+The answer is 20
+```
+- The f ensures the variable data becomes part of the string type being printed out
+- f strings can contain multiple variables and types
+```
+name="Adam"
+age=38
+town="Toddington"
+print(f"Hi {name}, you are {age} and you live in {town}")
+Hi Adam, you are 38 and you live in Toddington
+```
+- Using a f string is much simpler than using the comma
+```
+print("Hi", name, "you are", age, "and you live in", town,".")
+Hi Adam you are 38 and you live in Toddington .
+```
