@@ -95,7 +95,7 @@ Hi Adam Taylor its really good to meet a real Adam Taylor
 name = "Adam"
 >>> print(name)
 Adam
-name="Taylor"
+name = "Taylor"
 >>> print(name)
 Taylor
 ```
@@ -104,7 +104,7 @@ Taylor
 - Variables can be amended - adding extra text or numbers to the original variable value
     - This is done by using the normal naming process for a variable along with a + symbol and the extra data to be added to it
 ```
->>> word="Hello"
+>>> word = "Hello"
 >>> print(word)
 Hello
 >>> word = word + "!!!"
@@ -122,9 +122,9 @@ Hello!!!
 - The input command takes data that the user inputs
 - The data input from the user is usually stored in a variable to be called again
 ```
-name = input('What is your name?')
+name = input('What is your name? ')
 What is your name? Adam Taylor
->>> print ('Hello ' +name)
+>>> print ('Hello ' + name)
 Hello Adam Taylor
 ```
 - The input function and data taken from the user is stored in the variable name
@@ -158,15 +158,15 @@ print (name + ' is a valiant knight, born in the year ' + year + '. One morning 
     - E.g - 1, 19, 300
 - Integers can be assigned to variables
 ```
-age=21
+age = 21
 print(age)
 21
 ```
 - Integers do not need quote marks around them to be assigned to a variable
 - Using quotes will turn them into a string type variable
 ```
-number=100
-number1="100"
+number = 100
+number1 = "100"
 print(number + number)
 200
 print(number1 + number1)
@@ -175,7 +175,7 @@ print(number1 + number1)
 - A string type cannot calculate mathematical sums - an integer can
 - Integer and string values cannot be mixed together
 ```
-answer=10*2
+answer = 10*2
 print("The answer is " + answer)
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
@@ -204,8 +204,8 @@ The answer is 20
 - f strings can contain multiple variables and types
 ```
 name="Adam"
-age=38
-town="Toddington"
+age = 38
+town = "Toddington"
 print(f"Hi {name}, you are {age} and you live in {town}")
 Hi Adam, you are 38 and you live in Toddington
 ```
@@ -220,9 +220,9 @@ Hi Adam you are 38 and you live in Toddington .
     - E.g. - 1.5, 7.9. 300.21
 - They are used the same way as integers
 ```
-number1=2.5
-number2=1.25
-number3=3.62
+number1 = 2.5
+number2 = 1.25
+number3 = 3.62
 print(number1 + number2 + number3)
 7.37
 ```
