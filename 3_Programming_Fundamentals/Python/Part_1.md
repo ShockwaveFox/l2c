@@ -37,7 +37,7 @@ print (100 - 75)
 - Strings can be letters, numbers or symbols -
 ```
 print ('Hello, you 3 are scary!! Look at my special characters *&^%$')
-Hello, you 3 are scary!! Look at my special characters *&^%$
+    Hello, you 3 are scary!! Look at my special characters *&^%$
 ```
 - Each print funtion will usually print on its own line
 - Adding the end="" argument will make it so it stays on a single line
@@ -73,18 +73,18 @@ print (60 * 24)
 ```
 name = 'Adam'
 >>> print (name)
-Adam
+    Adam
 ```
 - Variables can be added into sentences as well using the + operator
 ```
 print ('Hello there, ' + name)
-Hello there, Adam
+    Hello there, Adam
 ```
 - Variables can be used as many times as you want
 ```
 name = 'Adam Taylor'
 print ('Hi ' + name + ' its really good to meet a real ' + name)
-Hi Adam Taylor its really good to meet a real Adam Taylor
+    Hi Adam Taylor its really good to meet a real Adam Taylor
 ```
 - Spaces need to be added at the end and beginning before the variable is used for proper formatting
 
@@ -93,23 +93,23 @@ Hi Adam Taylor its really good to meet a real Adam Taylor
 
 ```
 name = "Adam"
->>> print(name)
-Adam
+    print(name)
+    Adam
 name = "Taylor"
->>> print(name)
-Taylor
+print(name)
+    Taylor
 ```
 
 - Variables that do not change are known as "hard-coded" variables
 - Variables can be amended - adding extra text or numbers to the original variable value
     - This is done by using the normal naming process for a variable along with a + symbol and the extra data to be added to it
 ```
->>> word = "Hello"
->>> print(word)
-Hello
->>> word = word + "!!!"
->>> print(word)
-Hello!!!
+word = "Hello"
+print(word)
+    Hello
+word = word + "!!!"
+print(word)
+    Hello!!!
 ```
 - Variables should be named in relation to what they are going to be used for
 - They have to begin with a letter - lower or upper case
@@ -123,9 +123,9 @@ Hello!!!
 - The data input from the user is usually stored in a variable to be called again
 ```
 name = input('What is your name? ')
-What is your name? Adam Taylor
->>> print ('Hello ' + name)
-Hello Adam Taylor
+    What is your name? Adam Taylor
+print ('Hello ' + name)
+    Hello Adam Taylor
 ```
 - The input function and data taken from the user is stored in the variable name
 - name is then called in the print function and displays the user input
@@ -160,7 +160,7 @@ print (name + ' is a valiant knight, born in the year ' + year + '. One morning 
 ```
 age = 21
 print(age)
-21
+    21
 ```
 - Integers do not need quote marks around them to be assigned to a variable
 - Using quotes will turn them into a string type variable
@@ -168,29 +168,29 @@ print(age)
 number = 100
 number1 = "100"
 print(number + number)
-200
+    200
 print(number1 + number1)
-100100
+    100100
 ```
 - A string type cannot calculate mathematical sums - an integer can
 - Integer and string values cannot be mixed together
 ```
 answer = 10*2
 print("The answer is " + answer)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: can only concatenate str (not "int") to str
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    TypeError: can only concatenate str (not "int") to str
 ```
 - The str function can make an integer value into a string value
 ```
 print("The answer is " + str(answer))
-The answer is 20
+    The answer is 20
 ```
 - Print can use built in functionality to combine different values
     - This is done by using a commma between the 2 different types
 ```
 print("The answer is", answer)
-The answer is 20
+    The answer is 20
 ```
 - A space is automatically added when using the comma
 
@@ -198,7 +198,7 @@ The answer is 20
 - f strings can format print output that contains multiple data types
 ```
 print(f"The answer is {answer}")
-The answer is 20
+    The answer is 20
 ```
 - The f ensures the variable data becomes part of the string type being printed out
 - f strings can contain multiple variables and types
@@ -207,12 +207,12 @@ name="Adam"
 age = 38
 town = "Toddington"
 print(f"Hi {name}, you are {age} and you live in {town}")
-Hi Adam, you are 38 and you live in Toddington
+    Hi Adam, you are 38 and you live in Toddington
 ```
 - Using a f string is much simpler than using the comma
 ```
 print("Hi", name, "you are", age, "and you live in", town,".")
-Hi Adam you are 38 and you live in Toddington .
+    Hi Adam you are 38 and you live in Toddington .
 ```
 
 #### Floating Point Numbers
@@ -224,7 +224,7 @@ number1 = 2.5
 number2 = 1.25
 number3 = 3.62
 print(number1 + number2 + number3)
-7.37
+    7.37
 ```
 
 #### Arithmetic Operations
@@ -247,3 +247,66 @@ print(number1 + number2 + number3)
     4. Addition
     5. Subtraction
 - Using brackets can change the order - calculations in brackets will be done first and then the rest follwing the above order
+
+- An operand is a number - integer or float
+- They operand type will specify the results given
+    - E.g. - integer + integer = integer
+    - float + float = float
+    - float + integer = float
+```
+2+2
+4
+2.5+2.5
+5.0
+2.5+3
+5.5
+```
+
+- Using division / always results in a float - even when using integer numbers
+```
+9 / 2
+4.5
+```
+- There is an integer division operator - //
+    - The calculation will be rounded down to the nearest integer
+```
+9 // 2
+4
+```
+
+#### Input with numbers
+- The input function reads in strings as default
+- To convert string numbers to actual numbers the 'int' function can be used
+```
+input_year = input("What year were you born? ")
+    What year were you born? 1988
+print(input_year)
+    1988
+print(f"Your age in 2026 is - {2021 - input_year}")
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    TypeError: unsupported operand type(s) for -: 'int' and 'str'
+year = int(input_year)
+print(f"Your age in 2026 is - {2026 - year}")
+    Your age in 2026 is - 38
+```
+- This can be done without creating an extra variable using 'int' with 'input'
+```
+year = int(input("What is your birth year? "))
+What is your birth year? 1988
+print(f"You are {2026 - year} in 2026.")
+You are 38 in 2026.
+```
+- Strings can be changed into floats with the 'float' function
+```
+weight = float(input("What is your weight? "))
+    What is your weight? 86
+height = float(input("What is your height? "))
+    What is your height? 183
+print(f"You are {height} tall and weigh {weight} kilograms.")
+    You are 183.0 tall and weigh 86.0 kilograms.
+print(f"You are {height}cm tall and weigh {weight} kilograms.")
+    You are 183.0cm tall and weigh 86.0 kilograms.
+```
+
+#### Using variables
