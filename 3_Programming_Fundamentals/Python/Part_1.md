@@ -239,3 +239,11 @@ print(number1 + number2 + number3)
 |     //   | Division (integer result) | 9 // 2  |    4   |
 |     %    | Modulo                    | 9 % 2   |    1   |
 |     **   | Exponentiation (power of) | 2 ** 3  |    8   |
+
+- Calculation order follows maths
+    1. Exponents (to the power of)
+    2. Multiplication
+    3. Division
+    4. Addition
+    5. Subtraction
+- Using brackets can change the order - calculations in brackets will be done first and then the rest follwing the above order
