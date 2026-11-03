@@ -226,3 +226,16 @@ number3 = 3.62
 print(number1 + number2 + number3)
 7.37
 ```
+
+#### Arithmetic Operations
+- Python can use many different mathematical operators
+
+| Operator |  Purpose                  | Example | Result |
+| :------- | :------------------------ | :------ | :------|
+|     +	   | Addition	               | 2 + 4   |    6   |
+|     -	   | Subtraction	           | 25 - 5  |    20  | 
+|     *    | Multiplication            | 3 * 9   |    27  |
+|     /    | Division (float result)   | 9 / 2   |    4.5 |
+|     //   | Division (integer result) | 9 // 2  |    4   |
+|     %    | Modulo                    | 9 % 2   |    1   |
+|     **   | Exponentiation (power of) | 2 ** 3  |    8   |
