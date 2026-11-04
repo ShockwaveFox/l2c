@@ -1,0 +1,275 @@
+Regex
+| rex field=_raw "Order (?<orderCode>(\d+){25})"
+| rex field=_raw "code:(?<cronJob>(\w|\d| |:)+)"
+| rex field=_raw "status:(?<status>(\w+|_))"
+| rex field=_raw "result:(?<result>(\w+|_))"
+
+GDPR
+index="idx-digital-tjxe-tkmaxx" "tjxGdprCustomersCleanupCronJob"  PciLoggingManager 
+| rex field=_raw "Customer  code: (?<Customer>(\d\w.{36}))"
+| rex field=_raw "Customer  code: (?<CustID>(\w.{36}))"
+| rex field=_raw "GigyaUser  code: (?<Gigya>(.\d\w.{30}))" 
+| rex field=_raw "GigyaUser  code: (?<ID>(\w.{10}))" 
+| rex field=_raw "Result: (?<Result>(\w{7}))"
+| table  Customer,CustID, Gigya, ID, Result
+
+Integration index
+index="idx-integration-gateway" tag=prod
+
+Inv Overlay integration
+index="idx-integration-gateway" tag=prod DHLRP_InvOverlay_*
+
+Settlement Failed
+index="idx-digital-tjxe-tkmaxx" settlement_failed* 
+| rex field=_raw "order status:SETTLEMENT_FAILED, order code:(?<orderCode>(\d+){8})" 
+| table orderCode | dedup orderCode
+
+Orders Exported (Set date range)
+index="idx-digital-tjxe-tkmaxx" "Order Exported :"
+| rex field=_raw "Order Exported :(?<orderCode>(\d+){8})"
+| table orderCode | dedup orderCode
+
+Checked Invalid
+index="idx-digital-tjxe-tkmaxx" CHECKED_INVALID*
+| rex field=_raw "order status:CHECKED_INVALID, order code:(?<orderCode>(\d+){8})" 
+| table orderCode | dedup orderCode
+
+Payment Not Captured
+index="idx-digital-tjxe-tkmaxx" order_status_code:PAYMENT_NOT_CAPTURED*
+| rex field=_raw "order_code:(?<orderCode>(\d+){8})" 
+| table orderCode | dedup orderCode
+
+Sales Order Exports
+index="idx-digital-tjxe-tkmaxx" Executing SalesOrderExport execute for order=* DefaultSalesOrderExportMessageHandler NOT return
+| rex field=_raw "order=(?<orderCode>(\d+){8})"
+| table orderCode
+
+TM1 Files
+index="idx-digital-tjxe-tkmaxx" "SalesbyDept"*
+index="idx-digital-tjxe-tkmaxx" "CancelledOrders"*
+index="idx-digital-tjxe-tkmaxx" "ReturnsReport"*
+
+Ecom Orders (Flash Sales)
+index="idx-digital-tjxe-tkmaxx" "ecom_orders"* "Data Export"
+
+DHL Checks
+Order Update file check
+index="idx-digital-tjxe-tkmaxx" "Processing file DHLRP_OrderUpdate*"
+index="idx-digital-tjxe-tkmaxx" "Processing file DHLRP_OrderUpdate*" | timechart span=1d count by date
+
+Order return file checks
+index="idx-digital-tjxe-tkmaxx" "Processing file DHLRP_OrderReturn*"
+index="idx-digital-tjxe-tkmaxx" "Processing file DHLRP_OrderReturn*" | timechart span=1d count by date
+
+Order return emails automated
+index="idx-digital-tjxe-tkmaxx" DHLRP_OrderReturn*
+| rex field=_raw "Processing file (?<DHLRP>(\w){32})"
+| rex field=_raw "Problem resolving order : (?<order>(\d+){8})"
+| rex field=_raw "column: 0 : (?<record>(\d*\|\w*\|\d*))"
+| rex field=_raw "Column 2 not a valid return item: (?<item>(\d+){13})"
+| rex field=_raw "Column 3 Not a valid sku : (?<sku>(\d*\|\w*\|\d*))"
+| table DHLRP, order, record, item, sku
+| dedup order
+
+Order cancel file check
+index="idx-digital-tjxe-tkmaxx" "Processing file DHLRP_OrderCancel*"	
+index="idx-digital-tjxe-tkmaxx" "Processing file DHLRP_OrderCancel*" | timechart span=1d count by date
+
+Loyalty
+Customer Data feed
+index="idx-digital-tjxe-tkmaxx" File_Name = CustomerDataExportIncremental_*
+
+Certona Evening Delta
+Hybris_ItemData_Incremental_ (daily at 2am) 6pm Pacific time - job ending 230
+index="idx-digital-tjxe-tkmaxx" Successfully processed file Hybris_ItemData_Incremental_*.psv
+index="idx-digital-tjxe-tkmaxx" Successfully processed file Hybris_ItemData_Incremental_*.ctl
+index="idx-digital-tjxe-tkmaxx" Hybris_ItemData_Incremental_* AND Number of records:
+
+Certona Morning Delta
+Hybris_ItemData_Intra_ (daily at 4pm) 8am Pacific time - job ending 250
+index="idx-digital-tjxe-tkmaxx" Successfully processed file Hybris_ItemData_Intra_*.psv
+index="idx-digital-tjxe-tkmaxx" Successfully processed file Hybris_ItemData_Intra_*.ctl
+index="idx-digital-tjxe-tkmaxx" Hybris_ItemData_Intra_* AND Number of records:
+index="idx-digital-tjxe-tkmaxx" Successfully processed file Hybris_ItemData_Intra*.psv | timechart span=1d count by date
+
+Certona Weekly complete
+Hybris_ItemData_Complete_ (weekly at 6pm) 10am Pacific time - job ending 270
+index="idx-digital-tjxe-tkmaxx" Successfully processed file Hybris_ItemData_Complete_*.psv
+index="idx-digital-tjxe-tkmaxx" Successfully processed file Hybris_ItemData_Complete_*.ctl
+index="idx-digital-tjxe-tkmaxx" Hybris_ItemData_Complete_* AND Number of records:
+
+
+
+Hybris_ItemData_Intra_ CTL Number of Records
+index="idx-digital-tjxe-tkmaxx" Hybris_ItemData_Complete_* AND Number of records:
+| rex field=_raw "records: (?<Records>(\d+){5})"
+| rex field=_raw "Time: (?<Date>(\w+\s\w+\s\d+))"
+| table Date, Records
+
+
+
+Inventory Adjustment
+index="idx-digital-tjxe-tkmaxx" invAdj*
+index="idx-digital-tjxe-tkmaxx" index="idx-digital-tjxe-tkmaxx" Processing file Hybris_InvAdj_* "for batchStockRefreshImportConverter creation" NOT "Email Content" | timechart span=1d count by date
+
+Size Updates
+index="idx-digital-tjxe-tkmaxx" Hybris_ItemUpdate_*
+index="idx-digital-tjxe-tkmaxx" Hybris_ItemUpdate_* | timechart span=1d count by date
+
+Check for Inventory Overlay file
+index="idx-digital-tjxe-tkmaxx" Hybris_InvOverlay*
+
+Products Created in Hybris
+index="idx-digital-tjxe-tkmaxx" *TjxProductImportController* AND Data object was successfully imported for productImportDataSku =* 
+| table productImportDataSku
+
+Products sent to DHL
+index="idx-digital-tjxe-tkmaxx" exporting record*
+
+New products published to SOLR
+index="idx-digital-tjxe-tkmaxx" SCRIPT-checkPublishedProducts  earliest=-8hours
+
+Errored refunds removed from Orders
+index="idx-digital-tjxe-tkmaxx" "Removing Return Request"
+
+Daily order numbers
+index=idx-digital-tjxe-tkmaxx host="*esb*" "Process: order-process-worldpay" "created"
+| timechart span=1d count as TotalOrders 
+| table _time TotalOrders
+
+Completed orders in Hybris
+index=idx-digital-tjxe-tkmaxx "[DefaultSalesOrderExportService]  Order Exported :" 
+| rex field=_raw "Order Exported :(?<orderCode>(\d+){8})" 
+| dedup orderCode 
+| table orderCode
+
+Gigya Customer Details to Hybris failures
+index="idx-digital-tjxe-tkmaxx" HYB-0155 Gigya integration issue: Unable to synchronize the customer details*
+| timechart span=1d count by date
+
+Order updates by 15mins
+index=idx-digital-tjxe-tkmaxx "[DefaultSalesOrderExportService]  Order Exported :" 
+| rex field=_raw "Order Exported :(?<orderCode>(\d+){8})" 
+| dedup orderCode 
+| timechart span=10min count as orderexported
+
+Commodity Code not Found for Sku
+index="idx-digital-tjxe-tkmaxx" "Commodity code not found for Style:"
+| rex field=_raw "Style: (?<Style>(\d+){8})"
+| dedup Style
+| table Style
+
+Communication Problem Payment not Captured Orders
+index="idx-digital-tjxe-tkmaxx" "payment_transaction_status_details:COMMUNICATION_PROBLEM"
+| rex field=_raw "order_code:(?<order>(\d+){8})"
+| rex field=_raw "order_status_code:(?<status>(\w+){15})"
+| rex field=_raw "consignment_status_code:(?<consignment>(\w+){7})"
+| rex field=_raw "payment_transaction_type_code:(?<transaction>(\w+){7})"
+| rex field=_raw "payment_transaction_entry_status:(?<entry>(\w+){5})"
+| rex field=_raw "payment_transaction_status_details:(?<details>(\w+){15})"
+| table order, status, consignment, transaction, entry, details
+
+Orders with items not successfully validated
+index="idx-digital-tjxe-tkmaxx" "NOT successfully validated!"  OrderUpdateImportValidationStrategy 
+| rex field=_raw "Order (?<orderCode>(\d+){8})" 
+| rex field=_raw "product (?<productCode>(\d+){13})" 
+| table orderCode, productCode
+
+Return Request Moved
+index="idx-digital-tjxe-tkmaxx" Removing Return Request: 
+| rex field=_raw "Removing Return Request: (?<returnRequest>(\d+){8})" 
+| rex field=_raw "RMA: (?<RMA>(\d+){8})" 
+| rex field=_raw "Order: (?<orderCode>(\d+){8})" 
+| table orderCode,  RMA, returnRequest
+
+Orders authorised, cancelled and refused by day
+index=idx-digital-tjxe-tkmaxx "checkout*" sourcetype="access_combined_wcookie" "/worldpay/hop-response"
+| timechart span=1d count by paymentStatus
+
+Store Hours
+index="idx-digital-tjxe-tkmaxx" L3_Start Processing file TKMaxx_Stores_UK_*
+| timechart span=1d count as storeHours
+
+
+Inv Overlay
+index="idx-digital-tjxe-tkmaxx"  *L3_Start Processing file Hybris_InvOverlay_*
+| timechart span=1d count as invOverlay
+
+Size updates on Mid Flight orders
+index="idx-digital-tjxe-tkmaxx" Problem resolving product:*
+| rex field=_raw "product: (?<productCode>(\d+){14})"
+| table productCode
+
+Search for specific Skus for deletion
+index="idx-digital-tjxe-tkmaxx" Base Product deleted for style:*
+
+Order Export
+index=idx-digital-tjxe-tkmaxx "Export status:EXPORTED" earliest="@d-30d" 
+| rex field=_raw "count\:(?<exportedOrdersCount>\d+)" 
+| timechart per_day(exportedOrdersCount) as EXPORTED 
+| appendcols [ 
+       search index=idx-digital-tjxe-tkmaxx "Export status:EXPORT_FAILED" earliest="@d-30d" 
+       | rex field=_raw "count\:(?<notExportedOrdersCount>\d+)" 
+       | timechart per_day(notExportedOrdersCount) as EXPORT_FAILED 
+       ]
+
+Exporting orders
+index="idx-digital-tjxe-tkmaxx" ORDER_EXPORT_SCRIPT
+
+Processing Errors - Last 24hrs
+index="idx-digital-tjxe-tkmaxx" PROCESSING_ERROR*
+| rex field=_raw "PROCESSING_ERROR, order code:(?<orderCode>(\d+){8})"
+| table orderCode | dedup orderCode
+
+Checked Invalid - Last 24hrs
+
+
+Class Cast Exception errors when creating new skus
+index="idx-digital-tjxe-tkmaxx" HYB-0058
+| rex field=_raw "code = (?<Code>(\d){8})"
+| dedup Code
+| table Code
+
+Price group errors when creating new skus
+index="idx-digital-tjxe-tkmaxx" "User admin cannot modifiy prices with pricegroup"
+| rex field=_raw "code = (?<Code>(\d){8})"
+| dedup Code
+| table Code
+
+Orders Placed 
+index="idx-digital-tjxe-tkmaxx" https://www.tkmaxx.com/de/de/checkout/orderConfirmation/
+| rex field=_raw "orderConfirmation/(?<order>(\d+){8})"
+| dedup order
+| table order
+
+no result provided for value line
+index="idx-digital-tjxe-tkmaxx" "no result provided for value line"
+| rex field=_raw "1=ValueEntry\('(?<size1>(\d+){13})"
+| rex field=_raw "2=ValueEntry\('(?<sku>(\d+){8})"
+| rex field=_raw "4=ValueEntry\('(?<size2>(\d+){13})"
+| table sku, size1, size2
+
+Refund cancelled for Order
+index="idx-digital-tjxe-tkmaxx" "Refund will be cancelled for order: "
+| rex field=_raw "order: (?<order>(\d+){8})"
+| rex field=_raw "Order Entry: (?<OrderEntry>(\d+){15})"
+| dedup order
+| table order
+
+Hyb-0061
+index="idx-digital-tjxe-tkmaxx" "HYB-0061 Return Request does not exist for order "
+| rex field=_raw "order - (?<orderCode>(\d+){8})"
+| dedup orderCode
+| table orderCode
+
+HYB-0075
+index="idx-digital-tjxe-tkmaxx" "HYB-0075 invalid response received"
+| rex field=_raw "order=(?<orderCode>(\d+){8})"
+| dedup orderCode
+| table orderCode
+
+Orders with item names longer than 60 characters
+index="idx-digital-tjxe-tkmaxx" "Property itemName : size must be between*"
+| rex field=_raw "number (?<orderCode>(\d+){8})"
+| dedup orderCode
+| table orderCode

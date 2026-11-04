@@ -1,0 +1,89 @@
+Error Count
+builtin:service.keyRequest.errors.server.rate
+:filter(
+  and(
+    or(
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/search~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/cart/add~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/checkout~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/login~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/checkout/multi/delivery-method/choose~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/checkout/multi/payments/choose-payment-method~")")
+      )
+    )
+  )
+)
+:splitBy("dt.entity.service_method")
+:sort(value(auto,descending))
+:limit(20)
+
+Response Time
+builtin:service.keyRequest.response.time
+:filter(
+  and(
+    or(
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/search~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/cart/add~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/checkout~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/login~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/checkout/multi/delivery-method/choose~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/checkout/multi/payments/choose-payment-method~")")
+      )
+    )
+  )
+)
+:splitBy("dt.entity.service_method")
+:sort(value(auto,descending))
+:limit(20)
+
+Request Count
+builtin:service.keyRequest.count.server
+:filter(
+  and(
+    or(
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/search~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/cart/add~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/checkout~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/login~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/checkout/multi/delivery-method/choose~")")
+      ),
+      in("dt.entity.service_method",
+        entitySelector("type(service_method),entityName.equals(~"/at/de/checkout/multi/payments/choose-payment-method~")")
+      )
+    )
+  )
+)
+:splitBy("dt.entity.service_method")
+:sort(value(auto,descending))
+:limit(20)
