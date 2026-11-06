@@ -310,3 +310,61 @@ print(f"You are {height}cm tall and weigh {weight} kilograms.")
 ```
 
 #### Using variables
+- Multiple variables can be used in a program to store data
+```
+number1 = int(input("Enter 1st Number - "))
+number2 = int(input("Enter 2nd Number - "))
+number3 = int(input("Enter 3rd Number - "))
+
+sum = number1 + number2 + number3
+print(f"The sum of the numbers is {sum}")
+```
+- This can be shortened by reusing the same variable for the numbers input
+```
+sum = 0
+
+number = int(input("Enter 1st Number - "))
+sum = sum + number
+
+number = int(input("Enter 2nd Number - "))
+sum = sum + number
+
+number = int(input("Enter 3rd Number - "))
+sum = sum + number
+
+print(f"The total of the numbers is {sum}")
+```
+- The variable sum is updated each time with the input from the number variable
+- There is a shorthand version that can be used instead - variable1 += variable2
+```
+sum = 0
+
+number = int(input("Enter 1st Number - "))
+sum += number
+
+number = int(input("Enter 2nd Number - "))
+sum += number
+
+number = int(input("Enter 3rd Number - "))
+sum += number
+
+print(f"The total of the numbers is {sum}")
+```
+- The second variable can sometimes not be needed at all - the input can be fed and added directly to the one variable
+```
+sum = 0
+
+sum += int(input("Enter 1st Number - "))
+sum += int(input("Enter 2nd Number - "))
+sum += int(input("Enter 3rd Number - "))
+
+print(f"The sum of the values is - {sum}")
+```
+- If data is needed to be stored for each input independently separate variables should be used
+- Variable names should be descriptive of the data they are storing
+```
+name = input("What is your name? ")
+age = input("What is your age? ")
+
+print(f"Hi {name}, you are {age} years old today!")
+```

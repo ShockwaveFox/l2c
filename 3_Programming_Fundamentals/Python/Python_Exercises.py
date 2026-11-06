@@ -105,3 +105,67 @@ year = int(input("What year were you born? "))
 calculation_2 = (2021 - year)
 
 print(f"Hi {name}, you will be {calculation_2} years old at the end of the year 2021 ")
+
+# Ex 16 - Seconds in a day - ask users for number of days, calculate total seconds for number of days
+seconds = int(60 * 60 * 24)
+days = int(input("How many days? "))
+seconds_in_days = int(days * seconds)
+
+print(f"Seconds in that many days: {seconds_in_days}")
+
+# Ex 17 - Product - ask for 3 numbers and multiply by each other
+number1 = int(input("Please type in the first number: "))
+number2 = int(input("Please type in the second number: "))
+number3 = int(input("Please type in the third number: "))
+
+product = number1 * number2 * number3
+
+print("The product is", product)
+
+# Ex 18 - Sum and Product - ask for 2 numbers then add and multiply them
+number1 = int(input("Number1: "))
+number2 = int(input("Number2: "))
+
+sum = number1 + number2
+product = number1 * number2
+
+print(f"The sum of the numbers: {sum}")
+print(f"The product of the numbers: {product}")
+
+# Ex 19 - Sum and Mean - ask for 4 numbers and calculate the sum and mean of them
+number1 = int(input("Enter Number 1: "))
+number2 = int(input("Enter Number 2: "))
+number3 = int(input("Enter Number 3: "))
+number4 = int(input("Enter Number 4: "))
+
+sum = number1 + number2 + number3 + number4
+mean = sum / 4
+
+print(f"Number 1:{number1:}")
+print(f"Number 2:{number2:}")
+print(f"Number 3:{number3:}")
+print(f"Number 4:{number4:}")
+
+print(f"The sum of the numbers is {sum} and the mean is {mean}")
+
+# Ex 20 - food expenditure - take input and calculate
+cafe = int(input("How many times a week do you eat at the student cafeteria? "))
+lunch = float(input("The price of a typical student lunch? "))
+groceries = float(input("How much money do you spend on groceries in a week? "))
+
+daily = ((cafe * lunch) + groceries) / 7
+weekly = (cafe * lunch) + groceries
+
+print()
+print("Average food expenditure:")
+print(f"Daily: {daily} euros")
+print(f"Weekly: {weekly} euros")
+
+# COME BACK TO THIS ONE #
+# Ex 21 - Students in Groups - ask for numbers of students and divide into specified group sizes
+students = int(input("How many students on the course? "))
+groups = int(input("Desired group size? "))
+
+number_of_groups = students // groups
+
+print(f"Number of groups formed: {number_of_groups}")
