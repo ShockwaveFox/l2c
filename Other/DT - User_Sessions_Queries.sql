@@ -50,3 +50,57 @@ AND useraction.name LIKE "/uk/en/%"
 GROUP BY useraction.name, apdexCategory
 ORDER BY count(*) DESC
 LIMIT 10
+
+-- Total errors filtered by browsertype, family and usertype
+SELECT browserType, browserFamily, userType,
+  usererror.name AS "User Errors",
+  COUNT(usererror.name) FILTER > 10 AS "Count"
+FROM usersession
+WHERE useraction.application = "TKMaxxUK"
+AND usertype = "REAL_USER"
+AND browserType = "Desktop Browser"
+GROUP BY usererror.name, browserType, browserFamily, userType
+ORDER BY COUNT(usererror.name) DESC
+
+-- 
+SELECT internalUserId, browserType, browserFamily, userType,
+  TOP (usererror.name, 100) AS "Errors",
+  COUNT(usererror.name) AS "Count"
+FROM usersession
+WHERE useraction.application = "TKMaxxUK"
+AND usertype = "REAL_USER"
+AND browserType = "Desktop Browser"
+GROUP BY internalUserId, usererror.name, browserType, browserFamily, userType
+ORDER BY COUNT(usererror.name) DESC
+
+-- Count of specific error name
+SELECT useraction.name,
+COUNT(usererror.name) AS "Count"  
+FROM usersession
+WHERE useraction.application = "TKMaxxUK"
+AND usertype = "REAL_USER"
+AND browserType = "***MOBILE OR DESKTOP***"
+AND usererror.name = "***ERROR NAME***"
+GROUP BY useraction.name
+ORDER BY COUNT(usererror.name) DESC
+
+-- Count of specific error by browser family
+SELECT browserFamily,
+COUNT(usererror.name) AS "Count"  
+FROM usersession
+WHERE useraction.application = "TKMaxxUK"
+AND usertype = "REAL_USER"
+AND browserType = "***MOBILE OR DESKTOP***"
+AND usererror.name = "e.target.className.includes is not a function"
+GROUP BY browserFamily
+ORDER BY COUNT(usererror.name) DESC
+
+SELECT internalUserId, useraction.startTime,
+COUNT(usererror.name) AS "Count"  
+FROM usersession
+WHERE useraction.application = "TKMaxxUK"
+AND usertype = "REAL_USER"
+AND browserType = "Desktop Browser"
+AND usererror.name = "e.target.className.includes is not a function"
+GROUP BY internalUserId, useraction.startTime
+ORDER BY COUNT(usererror.name) DESC

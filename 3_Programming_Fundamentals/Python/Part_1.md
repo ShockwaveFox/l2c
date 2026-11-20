@@ -368,3 +368,50 @@ age = input("What is your age? ")
 
 print(f"Hi {name}, you are {age} years old today!")
 ```
+
+### Conditional Statements
+- Conditional statements allow code to run only in certain situations
+- the 'if' function is used to set the condition
+- A block of code only runs when the condition is TRUE
+
+```
+# ask user for age and store as integer
+age = int(input('How old are you? '))
+
+# if the input is over 18 (a TRUE condition) the 2 print functions run
+if age > 18:
+    print ('You can play GTA6!')
+    print ('Congratulations!')
+
+# if the input is under 18 (false condition) this print runs
+print ('Next customer please!')
+```
+```
+# TRUE condition (over 18)
+How old are you? 19
+You can play GTA6!
+Congratulations!
+```
+```
+# false condition (under 18)
+How old are you? 12
+Next customer please!
+```
+- There has to be a ':' colon character after 'if' or the code will error
+```
+File "<stdin>", line 1
+    if age > 18
+               ^
+SyntaxError: invalid syntax
+```
+#### Comparison Operators
+- Conditions usually compare two values using operators
+| Operator |  Purpose                  | Example |
+| :------- | :------------------------ | :------ |
+|    ==	   | Equal to	               | a == b  |
+|    !=	   | Not Equal to	           | a != b  | 
+|     >    | Greater than              | 1 > 2   |
+|    >=    | Greater than or equal to  | 1 >= 2  |
+|     <    | Less than                 | 1 < 2   |
+|    <=    | Less than or equal to     | 1 <= 2  |
+

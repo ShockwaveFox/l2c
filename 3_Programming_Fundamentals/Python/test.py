@@ -1,6 +1,7 @@
-students = int(input("How many students on the course? "))
-groups = int(input("Desired group size? "))
+age = int(input('How old are you? '))
 
-number_of_groups = students / groups
+if age > 18:
+    print ('You can play GTA6!')
+    print ('Congratulations!')
 
-print(f"Number of groups formed: {number_of_groups}")
+print ('Next customer please!')
