@@ -378,7 +378,7 @@ print(f"Hi {name}, you are {age} years old today!")
 # ask user for age and store as integer
 age = int(input('How old are you? '))
 
-# if the input is over 18 (a TRUE condition) the 2 print functions run
+# if the input is over 18 (a TRUE condition) all the print functions run
 if age > 18:
     print ('You can play GTA6!')
     print ('Congratulations!')
@@ -415,3 +415,36 @@ SyntaxError: invalid syntax
 |     <    | Less than                 | 1 < 2   |
 |    <=    | Less than or equal to     | 1 <= 2  |
 
+```
+number = int(input('Please type in a number:' ))
+
+# less than
+if number < 0:
+    print('Thats a low number!')
+
+# greater than
+if number > 0:
+    print('Thats a high number!')
+
+#equal to
+if number == 0:
+    print('Thats zero!')
+```
+
+#### Indentation
+- Code in a conditional statement should be indented after the 'if' statement
+- This is so Python can recognise it is part of that conditional statement
+- Each line should have the correct amount of whitespace - 
+    - the TAB key can be used
+    - most text editors will do this automatically
+```
+password = input('Please type in a password: ')
+
+# if the password is horse, ALL 3 of the print functions will run
+if password == 'horse':
+    print('Get some carrots')
+    print('And some horse-shoes')
+
+# If the password is not horse, only the LAST print function will run
+print('This program has finished now, Thank you for your time.')
+```

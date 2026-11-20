@@ -1,7 +1,16 @@
-age = int(input('How old are you? '))
+name = input("Please tell me your name: ")
 
-if age > 18:
-    print ('You can play GTA6!')
-    print ('Congratulations!')
+if name == 'Jerry':
+    print("Next please!")
 
-print ('Next customer please!')
+if name != 'Jerry':
+   portions = int(input("How many portions of soup? "))
+   cost = float(5.90)
+   total = float(portions * cost)
+   print(f"The total cost is {total}")
+   print("Next please!")
+
+
+
+
+

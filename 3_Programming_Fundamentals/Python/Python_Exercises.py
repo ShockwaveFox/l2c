@@ -169,3 +169,34 @@ groups = int(input("Desired group size? "))
 number_of_groups = students // groups
 
 print(f"Number of groups formed: {number_of_groups}")
+
+# Ex 22 - Orwell - print Orwell if the number is 1984, do nothing if not
+year = int(input('Please enter a year: '))
+
+if year == 1984:
+    print('Orwell')
+
+# Ex 23 - Absolute value - ask for a number - if less than zero multiply by -1
+number = int(input("Please input a number: "))
+multiplier = int(-1)
+
+if number < 0:
+    total = number * multiplier
+    print(f"The absolute value of this number is {total}")
+if number == 0:
+    print(f"The absolute value of this number is {number}")
+if number > 0:
+    print(f"The absolute value of this number is {number}")
+
+# Ex 24 - Soup or no soup - ask for a name and number of portions - if name is Jerry do nothing
+name = input("Please tell me your name: ")
+
+if name == 'Jerry':
+    print("Next please!")
+
+if name != 'Jerry':
+   portions = int(input("How many portions of soup? "))
+   cost = float(5.90)
+   total = float(portions * cost)
+   print(f"The total cost is {total}")
+   print("Next please!")
